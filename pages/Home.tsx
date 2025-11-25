@@ -213,10 +213,10 @@ const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { brand: "/brand-tvs.png", model: "Jupiter", image: "/bike-jupiter.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
-              { brand: "/brand-hero.png", model: "Splendor+", image: "/bike-splendor.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
-              { brand: "/brand-hero.png", model: "Passion Pro", image: "/bike-passion.png", type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
-              { brand: "/brand-tvs.png", model: "XL 100", image: "/bike-xl100.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
+              { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
+              { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
+              { brand: "/Brands_supported/hero_logo.png", model: "Passion Pro", image: "/Brands_supported/passion_pro_bike.png", type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
+              { brand: "/Brands_supported/tvs_logo.png", model: "XL 100", image: "/Brands_supported/xl100_bike.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
             ].map((bike, idx) => (
               <motion.div
                 key={idx}

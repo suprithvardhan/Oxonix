@@ -37,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-            <img src="/xonix_logo.jpg" alt={BRAND_NAME} className="h-10 w-auto object-contain rounded-lg" />
+            <img src="/xonix_logo.png" alt={BRAND_NAME} className="h-10 w-auto object-contain rounded-lg" />
             <span className="font-display font-bold text-2xl tracking-tight text-primary">{BRAND_NAME}</span>
           </div>
 
@@ -132,7 +132,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img src="/xonix_logo_with_tagline.jpg" alt={BRAND_NAME} className="h-16 w-auto object-contain rounded-lg bg-white/5 p-1" />
+                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-16 w-auto object-contain rounded-lg bg-white/5 p-1" />
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 Pioneering the future of sustainable mobility by retrofitting legacy vehicles with cutting-edge electric technology.

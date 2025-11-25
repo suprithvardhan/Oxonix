@@ -143,14 +143,14 @@ const Products: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 px-4">
           {[
-            { brand: "/brand-tvs.png", model: "Jupiter", image: "/bike-jupiter.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
-            { brand: "/brand-hero.png", model: "Splendor+", image: "/bike-splendor.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
-            { brand: "/brand-hero.png", model: "Passion Pro", image: "/bike-passion.png", type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
-            { brand: "/brand-tvs.png", model: "XL 100", image: "/bike-xl100.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
-            { brand: "/brand-honda.png", model: "Activa", image: "/bike-activa.png", type: "Scooter", color: "from-yellow-500/20 to-orange-500/20" },
-            { brand: "/brand-honda.png", model: "Shine", image: "/bike-shine.png", type: "Motorcycle", color: "from-red-500/20 to-red-800/20" },
-            { brand: "/brand-hero.png", model: "HF Deluxe", image: "/bike-hf.png", type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
-            { brand: "/brand-tvs.png", model: "Apache", image: "/bike-apache.png", type: "Motorcycle", color: "from-blue-600/20 to-blue-900/20" },
+            { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
+            { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
+            { brand: "/Brands_supported/hero_logo.png", model: "Passion Pro", image: "/Brands_supported/passion_pro_bike.png", type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
+            { brand: "/Brands_supported/tvs_logo.png", model: "XL 100", image: "/Brands_supported/xl100_bike.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
+            { brand: "/Brands_supported/honda_logo.png", model: "Activa", image: "/Brands_supported/activa_scooty.png", type: "Scooter", color: "from-yellow-500/20 to-orange-500/20" },
+            { brand: "/Brands_supported/honda_logo.png", model: "Shine", image: "/Brands_supported/shine_bike.png", type: "Motorcycle", color: "from-red-500/20 to-red-800/20" },
+            { brand: "/Brands_supported/hero_logo.png", model: "HF Deluxe", image: "/bike-hf.png", type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
+            { brand: "/Brands_supported/tvs_logo.png", model: "Apache", image: "/bike-apache.png", type: "Motorcycle", color: "from-blue-600/20 to-blue-900/20" },
           ].map((bike, idx) => (
             <motion.div
               key={idx}
