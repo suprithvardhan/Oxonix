@@ -124,7 +124,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* DIPP Recognition Section */}
-      <section className="bg-white dark:bg-black text-gray-900 dark:text-white py-20 border-y border-gray-200 dark:border-white/10 transition-colors duration-300 relative overflow-hidden">
+      <section className="min-h-[60vh] flex items-center bg-white dark:bg-black text-gray-900 dark:text-white py-20 border-y border-gray-200 dark:border-white/10 transition-colors duration-300 relative overflow-hidden">
         <div className="absolute inset-0 bg-gray-50/50 dark:bg-transparent pointer-events-none"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -176,7 +176,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Supported Vehicles Section */}
-      <section className="py-32 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
+      <section className="min-h-screen flex items-center py-32 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
         {/* Ambient Background */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>

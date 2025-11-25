@@ -4,7 +4,6 @@ import { Menu, X, MessageCircle, Zap, ArrowRight, Sun, Moon } from 'lucide-react
 import { NAV_ITEMS, BRAND_NAME, WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeContext';
-import ChatBot from './ChatBot';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -129,45 +128,49 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Footer */}
       <footer className="bg-gray-50 dark:bg-surface border-t border-gray-200 dark:border-white/5 py-16 transition-colors duration-300">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-12 mb-12 text-left">
+            <div className="col-span-3 md:col-span-1 mb-6 md:mb-0">
+              <div className="flex items-center gap-2 mb-4 md:mb-6">
+                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
                 Pioneering the future of sustainable mobility by retrofitting legacy vehicles with cutting-edge electric technology.
               </p>
             </div>
-            <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-6">Company</h4>
-              <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+
+            <div className="col-span-1">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm md:text-lg">Company</h4>
+              <ul className="space-y-2 md:space-y-4 text-xs md:text-sm text-gray-600 dark:text-gray-400">
                 <li><NavLink to="/about" className="hover:text-primary transition-colors">About Us</NavLink></li>
                 <li><NavLink to="/certifications" className="hover:text-primary transition-colors">Certifications</NavLink></li>
                 <li><NavLink to="/case-studies" className="hover:text-primary transition-colors">Case Studies</NavLink></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-6">Technology</h4>
-              <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-                <li><NavLink to="/technology" className="hover:text-primary transition-colors">Retrofit Process</NavLink></li>
+
+            <div className="col-span-1">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm md:text-lg">Tech</h4>
+              <ul className="space-y-2 md:space-y-4 text-xs md:text-sm text-gray-600 dark:text-gray-400">
+                <li><NavLink to="/technology" className="hover:text-primary transition-colors">Retrofit</NavLink></li>
                 <li><NavLink to="/products" className="hover:text-primary transition-colors">EV Kits</NavLink></li>
                 <li><NavLink to="/faq" className="hover:text-primary transition-colors">FAQs</NavLink></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-6">Contact</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">srikanthkethavth99@gmail.com</p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">+91 961 840 2450</p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">Hyderabad, Telangana</p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">9 AM – 7 PM</p>
-              <button onClick={openWhatsApp} className="text-primary text-sm font-bold hover:underline flex items-center gap-1">
-                Chat on WhatsApp <MessageCircle size={14} />
-              </button>
+
+            <div className="col-span-1">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm md:text-lg">Contact</h4>
+              <div className="flex flex-col gap-1 md:gap-2 text-[10px] md:text-sm text-gray-600 dark:text-gray-400 break-words">
+                <p>srikanthkethavth99@gmail.com</p>
+                <p>+91 961 840 2450</p>
+                <p>Hyderabad</p>
+                <button onClick={openWhatsApp} className="text-primary font-bold hover:underline flex items-center gap-1 mt-2">
+                  Chat <MessageCircle size={12} />
+                </button>
+              </div>
             </div>
           </div>
-          <div className="border-t border-gray-200 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600">
+          <div className="border-t border-gray-200 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600 gap-4">
             <p>© 2025 Oxonix Mobility LLP</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
+            <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
             </div>
@@ -175,16 +178,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </footer>
 
-      {/* Floating AI Chatbot */}
-      <ChatBot />
-
-      {/* Floating WhatsApp (Shifted slightly left to accommodate ChatBot stack) */}
+      {/* Floating WhatsApp */}
       <motion.button
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.1 }}
         onClick={openWhatsApp}
-        className="fixed bottom-8 right-24 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-shadow"
+        className="fixed bottom-8 right-8 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] transition-shadow"
       >
         <MessageCircle size={28} fill="white" />
       </motion.button>

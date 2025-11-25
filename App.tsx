@@ -11,10 +11,13 @@ import CaseStudies from './pages/CaseStudies';
 import FAQ from './pages/FAQ';
 import { ThemeProvider } from './components/ThemeContext';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
