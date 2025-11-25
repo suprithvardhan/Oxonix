@@ -8,7 +8,7 @@ const CaseStudies: React.FC = () => {
   const viewportConfig = { once: true, margin: "-100px 0px -50px 0px", amount: 0.2 };
 
   return (
-    <div className="bg-gray-50 dark:bg-black min-h-screen py-24 transition-colors duration-300">
+    <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <motion.h1
@@ -16,7 +16,7 @@ const CaseStudies: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportConfig}
             transition={{ duration: 0.6 }}
-            className="font-display text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
             Success <span className="text-primary">Stories</span>
           </motion.h1>

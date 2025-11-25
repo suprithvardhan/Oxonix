@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             <motion.div variants={itemVariants} className="inline-block border border-primary/30 rounded-full px-4 py-1 mb-6 bg-primary/10 text-primary text-sm font-semibold tracking-wider">
               ENGINEERED FOR THE FUTURE
             </motion.div>
-            <motion.h1 variants={itemVariants} className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
+            <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
               Convert Your Vehicle <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600 dark:to-accent">To Electric</span>
             </motion.h1>
             <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-lg leading-relaxed font-medium">
@@ -124,18 +124,18 @@ const Home: React.FC = () => {
       </section>
 
       {/* DIPP Recognition Section */}
-      <section className="min-h-[60vh] flex items-center bg-white dark:bg-black text-gray-900 dark:text-white py-20 border-y border-gray-200 dark:border-white/10 transition-colors duration-300 relative overflow-hidden">
+      <section className="min-h-[50vh] flex items-center bg-white dark:bg-black text-gray-900 dark:text-white py-12 md:py-20 border-y border-gray-200 dark:border-white/10 transition-colors duration-300 relative overflow-hidden">
         <div className="absolute inset-0 bg-gray-50/50 dark:bg-transparent pointer-events-none"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="w-full md:w-1/2">
               <div className="flex items-center gap-4 mb-6">
-                <img src="/make-in-india-new.png" alt="Make in India" className="h-12 object-contain opacity-90" />
-                <span className="text-green-600 dark:text-green-500 font-bold tracking-widest text-sm uppercase border-l border-gray-300 dark:border-white/20 pl-4">Government Recognized</span>
+                <img src="/make-in-india-new.png" alt="Make in India" className="h-10 md:h-12 object-contain opacity-90" />
+                <span className="text-green-600 dark:text-green-500 font-bold tracking-widest text-xs md:text-sm uppercase border-l border-gray-300 dark:border-white/20 pl-4">Government Recognized</span>
               </div>
 
-              <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">DIPP Recognized Startup</h2>
-              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white">DIPP Recognized Startup</h2>
+              <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-6 md:mb-8">
                 Oxonix Private Limited is officially recognized by the Department for Promotion of Industry and Internal Trade (DPIIT) as a Startup working in the 'Automotive' and 'Electric Vehicles' sector.
               </p>
 
@@ -176,27 +176,27 @@ const Home: React.FC = () => {
       </section>
 
       {/* Supported Vehicles Section */}
-      <section className="min-h-screen flex items-center py-32 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
+      <section className="min-h-screen flex items-center py-16 md:py-32 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
         {/* Ambient Background */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
+        <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
+        <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-500/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="inline-block mb-4 px-4 py-1.5 rounded-full border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm shadow-sm dark:shadow-none"
             >
-              <span className="text-primary text-sm font-bold tracking-widest uppercase">Compatibility</span>
+              <span className="text-primary text-xs md:text-sm font-bold tracking-widest uppercase">Compatibility</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="font-display text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+              className="font-display text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white"
             >
               Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Transformation</span>
             </motion.h2>
@@ -205,14 +205,14 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed"
+              className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
             >
               Our advanced retrofitting kits are precision-engineered for India's most iconic two-wheelers.
               Experience the future without changing your ride.
             </motion.p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
             {[
               { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
               { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
@@ -230,17 +230,17 @@ const Home: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 dark:from-white/5 to-white/40 dark:to-transparent rounded-3xl -z-10 transition-all duration-500 group-hover:scale-105 shadow-sm group-hover:shadow-xl dark:shadow-none"></div>
                 <div className={`absolute inset-0 bg-gradient-to-br ${bike.color} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-20`}></div>
 
-                <div className="bg-white/60 dark:bg-[#111] border border-gray-200/60 dark:border-white/10 rounded-3xl p-6 h-full backdrop-blur-md hover:border-primary/50 dark:hover:border-white/20 transition-colors overflow-hidden shadow-sm hover:shadow-lg dark:shadow-none">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="h-8 bg-gray-100 dark:bg-white/5 rounded px-2 py-1">
+                <div className="bg-white/60 dark:bg-[#111] border border-gray-200/60 dark:border-white/10 rounded-[1.5rem] md:rounded-3xl p-3 md:p-6 h-full backdrop-blur-md hover:border-primary/50 dark:hover:border-white/20 transition-colors overflow-hidden shadow-sm hover:shadow-lg dark:shadow-none">
+                  <div className="flex justify-between items-start mb-3 md:mb-8">
+                    <div className="h-6 md:h-8 bg-gray-100 dark:bg-white/5 rounded px-2 py-1">
                       <img src={bike.brand} alt="Brand" className="h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-white/40 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-full group-hover:text-gray-900 dark:group-hover:text-white group-hover:border-gray-400 dark:group-hover:border-white/30 transition-all">
+                    <div className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-white/40 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-full group-hover:text-gray-900 dark:group-hover:text-white group-hover:border-gray-400 dark:group-hover:border-white/30 transition-all">
                       {bike.type}
                     </div>
                   </div>
 
-                  <div className="relative aspect-[4/3] mb-8 flex items-center justify-center">
+                  <div className="relative aspect-[4/3] mb-3 md:mb-8 flex items-center justify-center">
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 dark:to-black/50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <img
                       src={bike.image}
@@ -250,8 +250,8 @@ const Home: React.FC = () => {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">{bike.model}</h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                    <h3 className="font-display text-sm md:text-2xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2 group-hover:text-primary transition-colors">{bike.model}</h3>
+                    <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-sm text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                       Kit Available
                     </div>

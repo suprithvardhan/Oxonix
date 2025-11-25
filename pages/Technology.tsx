@@ -25,7 +25,7 @@ const Technology: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-5xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="font-display text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white"
           >
             Engineering <span className="text-primary">Excellence</span>
           </motion.h1>
@@ -41,7 +41,7 @@ const Technology: React.FC = () => {
         </div>
 
         {/* 3D Component Breakdown Simulation */}
-        <div className="flex flex-col gap-24 mb-24">
+        <div className="flex flex-col gap-16 md:gap-24 mb-16 md:mb-24">
           {[
             {
               icon: Battery,
@@ -97,7 +97,7 @@ const Technology: React.FC = () => {
         </div>
 
         {/* Safety Layers */}
-        <div className="mb-24">
+        <div className="mb-16 md:mb-24">
           <h2 className="font-display text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white">Safety Architecture</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -126,7 +126,7 @@ const Technology: React.FC = () => {
         </div>
 
         {/* Installation Timeline */}
-        <div className="mb-24">
+        <div className="mb-16 md:mb-24">
           <h2 className="font-display text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white">Installation Timeline</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
@@ -159,7 +159,7 @@ const Technology: React.FC = () => {
             </div>
           </div>
 
-          <div className="h-[400px] w-full">
+          <div className="h-[300px] md:h-[400px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={data}

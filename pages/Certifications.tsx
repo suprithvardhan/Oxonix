@@ -6,7 +6,7 @@ const Certifications: React.FC = () => {
   const viewportConfig = { once: true, margin: "-100px 0px -50px 0px", amount: 0.2 };
 
   return (
-    <div className="bg-gray-50 dark:bg-black min-h-screen py-24 transition-colors duration-300">
+    <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <motion.h1
@@ -14,7 +14,7 @@ const Certifications: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportConfig}
             transition={{ duration: 0.6 }}
-            className="font-display text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
             Certified & <span className="text-primary">Compliant</span>
           </motion.h1>
@@ -38,7 +38,7 @@ const Certifications: React.FC = () => {
           viewport={viewportConfig}
           className="mb-20"
         >
-          <div className="bg-white dark:bg-[#111] rounded-3xl p-8 md:p-12 border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden relative transition-colors duration-300">
+          <div className="bg-white dark:bg-[#111] rounded-3xl p-6 md:p-12 border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden relative transition-colors duration-300">
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none"></div>
 
@@ -54,7 +54,7 @@ const Certifications: React.FC = () => {
                   </div>
                 </div>
 
-                <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-6">Recognition & Credibility</h2>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Recognition & Credibility</h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
                   Oxonix Private Limited is officially certified by the Government of India under the Startup India initiative. This recognition is a testament to our commitment to innovation in the EV sector.
                 </p>

@@ -7,24 +7,24 @@ const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <div className="bg-gray-50 dark:bg-black min-h-screen py-24 transition-colors duration-300">
+    <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-display text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
             Frequently Asked <span className="text-primary">Questions</span>
           </motion.h1>
-          <motion.p 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.2 }}
-             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
             Everything you need to know about converting your vehicle to electric.
           </motion.p>
@@ -32,7 +32,7 @@ const FAQ: React.FC = () => {
 
         <div className="max-w-3xl mx-auto">
           {FAQS.map((faq, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const FAQ: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="mb-4"
             >
-              <div 
+              <div
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                 className={`cursor-pointer bg-white dark:bg-surface border rounded-lg overflow-hidden transition-all ${activeIndex === index ? 'border-primary shadow-lg shadow-primary/10' : 'border-gray-200 dark:border-white/10'}`}
               >
@@ -72,7 +72,7 @@ const FAQ: React.FC = () => {
 
         <div className="mt-12 text-center">
           <p className="text-gray-500 mb-4">Still have questions?</p>
-          <button 
+          <button
             onClick={() => window.open('https://wa.me/919876543210', '_blank')}
             className="text-primary font-bold hover:underline flex items-center justify-center gap-2"
           >
