@@ -95,6 +95,54 @@ const Certifications: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Other Certifications Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportConfig}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4">Official Registrations</h2>
+            <p className="text-gray-600 dark:text-gray-400">Recognized by leading government bodies.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Ministry of Corporate Affairs",
+                logo: "/minisrtry-of-corporaate-affairs.png",
+                desc: "Registered Entity",
+                bg: "bg-white"
+              },
+              {
+                name: "Startup India",
+                logo: "/startup-india-logo.png",
+                desc: "DPIIT Recognized",
+                bg: "bg-white"
+              },
+              {
+                name: "Make in India",
+                logo: "/make-in-india-new.png",
+                desc: "Indigenous Manufacturing",
+                bg: "bg-white"
+              }
+            ].map((cert, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all"
+              >
+                <div className={`w-32 h-32 mb-6 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner`}>
+                  <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
+                </div>
+                <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">{cert.name}</h3>
+                <p className="text-sm text-primary font-medium">{cert.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
 
       </div>
     </div>
