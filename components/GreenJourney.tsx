@@ -15,13 +15,13 @@ const GreenJourney: React.FC = () => {
     };
 
     return (
-        <div className="relative w-full min-h-[700px] bg-slate-900 overflow-hidden flex flex-col items-center justify-center py-20 transition-colors duration-1000">
+        <div className="relative w-full min-h-[700px] bg-gray-100 dark:bg-slate-900 overflow-hidden flex flex-col items-center justify-center py-20 transition-colors duration-1000">
 
             {/* --- Dynamic Background --- */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Petrol Ambience: Warm, Dusty, Smoggy */}
                 <motion.div
-                    className="absolute inset-0 bg-gradient-to-b from-orange-900/20 via-slate-900 to-black"
+                    className="absolute inset-0 bg-gradient-to-b from-orange-100/50 via-gray-100 to-gray-200 dark:from-orange-900/20 dark:via-slate-900 dark:to-black"
                     animate={{ opacity: stage === 'electric' ? 0 : 1 }}
                     transition={{ duration: 1.5 }}
                 >
@@ -30,7 +30,7 @@ const GreenJourney: React.FC = () => {
 
                 {/* Electric Ambience: Cool, Clean, Tech */}
                 <motion.div
-                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900/30 via-slate-900 to-black"
+                    className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-100/50 via-gray-100 to-white dark:from-emerald-900/30 dark:via-slate-900 dark:to-black"
                     animate={{ opacity: stage === 'electric' ? 1 : 0 }}
                     transition={{ duration: 1.5 }}
                 >
@@ -46,7 +46,7 @@ const GreenJourney: React.FC = () => {
                     [...Array(15)].map((_, i) => (
                         <motion.div
                             key={`smog-${i}`}
-                            className="absolute rounded-full bg-gray-500/20 blur-xl"
+                            className="absolute rounded-full bg-gray-500/20 dark:bg-gray-500/20 blur-xl"
                             style={{
                                 width: Math.random() * 100 + 50,
                                 height: Math.random() * 100 + 50,
@@ -71,7 +71,7 @@ const GreenJourney: React.FC = () => {
                     [...Array(20)].map((_, i) => (
                         <motion.div
                             key={`sparkle-${i}`}
-                            className="absolute rounded-full bg-green-400/60 blur-[1px]"
+                            className="absolute rounded-full bg-green-500/40 dark:bg-green-400/60 blur-[1px]"
                             style={{
                                 width: Math.random() * 4 + 1,
                                 height: Math.random() * 4 + 1,
@@ -100,19 +100,19 @@ const GreenJourney: React.FC = () => {
                 <motion.div className="text-center mb-12 relative z-20">
                     <motion.h2
                         layout
-                        className="font-display text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg"
+                        className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 drop-shadow-sm dark:drop-shadow-lg"
                     >
                         {stage === 'electric' ? (
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300">
                                 The Future is Electric
                             </span>
                         ) : (
-                            <span className="text-gray-200">
+                            <span className="text-gray-800 dark:text-gray-200">
                                 Stuck in the Past?
                             </span>
                         )}
                     </motion.h2>
-                    <motion.p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                    <motion.p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium">
                         {stage === 'electric'
                             ? "Experience silence, savings, and sustainability. Your ride, upgraded."
                             : "High fuel costs. Noise pollution. Carbon emissions. It's time for a change."
@@ -124,14 +124,14 @@ const GreenJourney: React.FC = () => {
                 <div className="relative w-full max-w-4xl aspect-[16/9] md:aspect-[2/1] flex items-center justify-center mb-16">
 
                     {/* Image Container */}
-                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black/50">
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/50">
 
                         {/* 1. Base Layer: Petrol Bike (Always visible underneath) */}
                         <div className="absolute inset-0 flex items-center justify-center p-8">
                             <motion.img
                                 src="/shine_bike_petrol.png"
                                 alt="Petrol Scooter"
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal"
                                 animate={stage === 'petrol' ? {
                                     filter: "grayscale(30%) sepia(20%) contrast(1.1)",
                                     x: [-1, 1, -1],
@@ -148,7 +148,7 @@ const GreenJourney: React.FC = () => {
 
                         {/* 2. Reveal Layer: Electric Bike (Masked) */}
                         <motion.div
-                            className="absolute inset-0 bg-black/20 backdrop-blur-[2px] z-10" // Slight dimming of background for EV pop
+                            className="absolute inset-0 bg-white/50 dark:bg-black/20 backdrop-blur-[2px] z-10" // Slight dimming of background for EV pop
                             initial={{ clipPath: "inset(0 100% 0 0)" }}
                             animate={{
                                 clipPath: stage === 'petrol' ? "inset(0 100% 0 0)" :
@@ -160,11 +160,11 @@ const GreenJourney: React.FC = () => {
                             }}
                         >
                             {/* EV Image Container */}
-                            <div className="absolute inset-0 flex items-center justify-center p-8 bg-gradient-to-r from-emerald-900/20 to-transparent">
+                            <div className="absolute inset-0 flex items-center justify-center p-8 bg-gradient-to-r from-emerald-100/50 to-transparent dark:from-emerald-900/20">
                                 <motion.img
                                     src="/shine_bike_ev.png"
                                     alt="Electric Scooter"
-                                    className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(74,222,128,0.3)]"
+                                    className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(74,222,128,0.3)] mix-blend-multiply dark:mix-blend-normal"
                                     animate={{
                                         y: [0, -5, 0], // Gentle float
                                     }}
@@ -181,7 +181,7 @@ const GreenJourney: React.FC = () => {
                         <AnimatePresence>
                             {stage === 'scanning' && (
                                 <motion.div
-                                    className="absolute top-0 bottom-0 w-1 bg-green-400 z-20 shadow-[0_0_40px_#4ade80,0_0_10px_#fff]"
+                                    className="absolute top-0 bottom-0 w-1 bg-green-500 dark:bg-green-400 z-20 shadow-[0_0_40px_#4ade80,0_0_10px_#fff]"
                                     initial={{ left: "0%" }}
                                     animate={{ left: "100%" }}
                                     exit={{ opacity: 0 }}
@@ -191,7 +191,7 @@ const GreenJourney: React.FC = () => {
                                     <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-green-500/30 to-transparent"></div>
                                     {/* Sparkles at contact point */}
                                     <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2">
-                                        <Sparkles className="text-white w-12 h-12 animate-spin-slow" />
+                                        <Sparkles className="text-green-600 dark:text-white w-12 h-12 animate-spin-slow" />
                                     </div>
                                 </motion.div>
                             )}
@@ -248,7 +248,7 @@ const GreenJourney: React.FC = () => {
                 <motion.button
                     onClick={handleTransform}
                     className={`relative z-50 px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 ${stage === 'electric'
-                        ? 'bg-white text-green-900 hover:bg-gray-100'
+                        ? 'bg-white text-green-900 border border-gray-200 hover:bg-gray-50 shadow-lg'
                         : 'bg-green-600 text-white hover:bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.5)]'
                         }`}
                     whileHover={{ scale: 1.05 }}
@@ -289,20 +289,28 @@ const StatCard: React.FC<StatCardProps> = ({ position, label, value, type, icon,
         <motion.div
             className={`absolute ${position} backdrop-blur-md border rounded-xl p-4 w-36 md:w-48 shadow-lg transition-colors duration-500`}
             style={{
-                backgroundColor: type === 'good' ? 'rgba(20, 83, 45, 0.6)' : 'rgba(127, 29, 29, 0.6)',
-                borderColor: type === 'good' ? 'rgba(74, 222, 128, 0.3)' : 'rgba(248, 113, 113, 0.3)',
+                // Light mode: Solid colors with opacity. Dark mode: Glassy
+                backgroundColor: type === 'good'
+                    ? 'var(--stat-good-bg, rgba(20, 83, 45, 0.6))'
+                    : 'var(--stat-bad-bg, rgba(127, 29, 29, 0.6))',
+                borderColor: type === 'good'
+                    ? 'rgba(74, 222, 128, 0.3)'
+                    : 'rgba(248, 113, 113, 0.3)',
             }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             key={value} // Re-animate when value changes
             transition={{ delay, duration: 0.5 }}
         >
-            <div className={`flex items-center gap-2 mb-1 text-[10px] md:text-xs font-bold uppercase tracking-wider ${type === 'good' ? 'text-green-300' : 'text-red-300'
+            {/* Inline style override for light mode via CSS variables or class logic is tricky with dynamic style prop. 
+                Let's use conditional classes for the content instead. 
+            */}
+            <div className={`flex items-center gap-2 mb-1 text-[10px] md:text-xs font-bold uppercase tracking-wider ${type === 'good' ? 'text-green-200 dark:text-green-300' : 'text-red-200 dark:text-red-300'
                 }`}>
                 {icon}
                 {label}
             </div>
-            <div className="text-white font-display font-bold text-base md:text-xl">
+            <div className="text-white font-display font-bold text-base md:text-xl drop-shadow-md">
                 {value}
             </div>
         </motion.div>

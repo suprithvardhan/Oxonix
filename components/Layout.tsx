@@ -31,7 +31,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-          ? 'bg-white/90 dark:bg-black/80 backdrop-blur-lg border-gray-200 dark:border-white/10 py-4 shadow-sm dark:shadow-none'
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md border-gray-200/50 dark:border-white/10 py-4 shadow-sm dark:shadow-none'
           : 'bg-transparent border-transparent py-6'
           }`}
       >
@@ -48,7 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-sm font-medium hover:text-primary transition-colors ${isActive ? 'text-primary' : 'text-gray-600 dark:text-gray-300'}`
+                  `text-sm font-medium hover:text-primary transition-colors ${isActive ? 'text-primary' : 'text-gray-700 dark:text-gray-300'}`
                 }
               >
                 {item.label}
@@ -58,7 +58,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 transition-colors text-gray-600 dark:text-gray-300"
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-gray-700 dark:text-gray-300"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -69,7 +69,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="hidden md:flex">
             <button
               onClick={openWhatsApp}
-              className="bg-primary hover:bg-green-400 text-black font-bold px-5 py-2 rounded-full text-sm transition-all flex items-center gap-2 shadow-lg shadow-primary/20"
+              className="bg-primary hover:bg-green-400 text-black font-bold px-5 py-2 rounded-full text-sm transition-all flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40"
             >
               Enquire Now <ArrowRight size={16} />
             </button>
@@ -97,7 +97,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white dark:bg-black pt-24 px-6 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl pt-24 px-6 md:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-6">
               {NAV_ITEMS.map((item) => (
@@ -127,12 +127,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 dark:bg-surface border-t border-gray-200 dark:border-white/5 py-16 transition-colors duration-300">
+      <footer className="bg-gray-50 dark:bg-surface border-t border-gray-200 dark:border-white/5 py-16 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-16 w-auto object-contain rounded-lg bg-white/5 p-1" />
+                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 Pioneering the future of sustainable mobility by retrofitting legacy vehicles with cutting-edge electric technology.
@@ -141,17 +141,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-6">Company</h4>
               <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-                <li><NavLink to="/about" className="hover:text-primary">About Us</NavLink></li>
-                <li><NavLink to="/certifications" className="hover:text-primary">Certifications</NavLink></li>
-                <li><NavLink to="/case-studies" className="hover:text-primary">Case Studies</NavLink></li>
+                <li><NavLink to="/about" className="hover:text-primary transition-colors">About Us</NavLink></li>
+                <li><NavLink to="/certifications" className="hover:text-primary transition-colors">Certifications</NavLink></li>
+                <li><NavLink to="/case-studies" className="hover:text-primary transition-colors">Case Studies</NavLink></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-6">Technology</h4>
               <ul className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-                <li><NavLink to="/technology" className="hover:text-primary">Retrofit Process</NavLink></li>
-                <li><NavLink to="/products" className="hover:text-primary">EV Kits</NavLink></li>
-                <li><NavLink to="/faq" className="hover:text-primary">FAQs</NavLink></li>
+                <li><NavLink to="/technology" className="hover:text-primary transition-colors">Retrofit Process</NavLink></li>
+                <li><NavLink to="/products" className="hover:text-primary transition-colors">EV Kits</NavLink></li>
+                <li><NavLink to="/faq" className="hover:text-primary transition-colors">FAQs</NavLink></li>
               </ul>
             </div>
             <div>
@@ -168,8 +168,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="border-t border-gray-200 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600">
             <p>© 2025 Oxonix Mobility LLP</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary">Privacy Policy</a>
-              <a href="#" className="hover:text-primary">Terms of Service</a>
+              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
