@@ -41,7 +41,7 @@ const About: React.FC = () => {
     {
       name: "Kethavath Srikanth",
       role: "Founder & CEO",
-      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+      img: "/Team/Srikanth.jpg",
       bio: [
         "B.Tech graduate in Electronics and Communication Engineering.",
         "Skilled firmware developer with deep experience in CubeSat systems and electric vehicle technologies.",
@@ -61,7 +61,7 @@ const About: React.FC = () => {
     {
       name: "Sairohit",
       role: "Product Development Lead",
-      img: "https://images.unsplash.com/photo-1581092921461-eab62e97a783?auto=format&fit=crop&w=400&q=80",
+      img: "/Team/Rohith.jpg",
       bio: [
         "Mechanical engineer skilled in CAD design, structural analysis, and rapid prototyping using SolidWorks, Fusion 360, ANSYS, CNC, and 3D printing.",
         "Hands-on experience at American Air Filter (AAF), giving him strong exposure to industrial-quality engineering and manufacturing standards.",

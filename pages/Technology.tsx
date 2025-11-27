@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import { Cpu, Battery, Zap, ShieldAlert, Thermometer, Lock, Clock } from 'lucide-react';
+import { Cpu, Battery, Zap, ShieldAlert, Thermometer, Lock, Clock, RefreshCw, FileCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useTheme } from '../components/ThemeContext';
 
 const data = [
@@ -15,6 +15,7 @@ const data = [
 const Technology: React.FC = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
+  const [activeTab, setActiveTab] = useState<'full' | 'dual'>('full');
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen pt-12 transition-colors duration-300">
@@ -38,6 +39,96 @@ const Technology: React.FC = () => {
           >
             Our retrofit kits are not off-the-shelf parts. They are integrated systems designed for thermal stability, efficiency, and longevity.
           </motion.p>
+        </div>
+
+        {/* Retrofit Solutions Section */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Choose Your Transformation</h2>
+            <p className="text-gray-600 dark:text-gray-400">Two paths to electric freedom. One uncompromising standard of quality.</p>
+          </div>
+
+          <div className="flex justify-center mb-12">
+            <div className="bg-white dark:bg-white/5 p-1 rounded-full border border-gray-200 dark:border-white/10 inline-flex relative">
+              <div
+                className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ease-out ${activeTab === 'full' ? 'left-1 w-[140px]' : 'left-[148px] w-[140px]'}`}
+              ></div>
+              <button
+                onClick={() => setActiveTab('full')}
+                className={`relative z-10 px-8 py-3 rounded-full font-bold transition-colors duration-300 ${activeTab === 'full' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+              >
+                Full Electric
+              </button>
+              <button
+                onClick={() => setActiveTab('dual')}
+                className={`relative z-10 px-8 py-3 rounded-full font-bold transition-colors duration-300 ${activeTab === 'dual' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+              >
+                Dual Power
+              </button>
+            </div>
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+            >
+              <div className="order-2 md:order-1">
+                <div className="inline-flex items-center gap-2 text-primary mb-4 font-bold uppercase tracking-wider text-sm">
+                  {activeTab === 'full' ? <Zap size={18} /> : <RefreshCw size={18} />}
+                  {activeTab === 'full' ? 'Pure EV Experience' : 'Hybrid Flexibility'}
+                </div>
+                <h3 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                  {activeTab === 'full' ? 'Full Electric Conversion' : 'Dual-Mode Conversion'}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+                  {activeTab === 'full'
+                    ? "Complete transformation of your vehicle. We strip the ICE components to create a lightweight, high-efficiency pure electric machine."
+                    : "The best of both worlds. Keep your engine for backup while enjoying the economy of electric drive for your daily commute."}
+                </p>
+
+                <ul className="space-y-4 mb-8">
+                  {[
+                    activeTab === 'full' ? "Remove Engine, Fuel Tank, Exhaust & Drivetrain" : "Keep ICE components intact",
+                    activeTab === 'full' ? "Install Motor + Battery Pack + Controller" : "Add Electric Hub Motor + Battery",
+                    activeTab === 'full' ? "Modify Wiring & Electronics" : "Switchable Drive Modes (Petrol/Electric)",
+                    "ARAI Approved Kit",
+                    "RTO Re-registration as EV"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                      <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="order-1 md:order-2 relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl blur-2xl"></div>
+                <div className="relative bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-2 shadow-2xl overflow-hidden">
+                  <img
+                    src={activeTab === 'full'
+                      ? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80"
+                      : "https://images.unsplash.com/photo-1623079400394-f07955b7b09d?auto=format&fit=crop&w=800&q=80"}
+                    alt={activeTab === 'full' ? "Full Electric" : "Dual Power"}
+                    className="rounded-2xl w-full h-[400px] object-cover"
+                  />
+                  <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-bold">Efficiency</span>
+                      <span className="text-primary font-bold">{activeTab === 'full' ? '100%' : '85%'}</span>
+                    </div>
+                    <div className="w-full bg-white/20 h-1.5 rounded-full mt-2 overflow-hidden">
+                      <div className={`h-full bg-primary rounded-full ${activeTab === 'full' ? 'w-full' : 'w-[85%]'}`}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* 3D Component Breakdown Simulation */}
@@ -125,22 +216,74 @@ const Technology: React.FC = () => {
           </div>
         </div>
 
-        {/* Installation Timeline */}
-        <div className="mb-16 md:mb-24">
-          <h2 className="font-display text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white">Installation Timeline</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            {[
-              { time: "Day 0", action: "Vehicle Drop-off" },
-              { time: "Day 1", action: "Engine Removal" },
-              { time: "Day 2", action: "Kit Integration" },
-              { time: "Day 3-5", action: "Testing & RTO" },
-            ].map((t, i) => (
-              <div key={i} className="bg-gray-100 dark:bg-surface p-6 rounded-lg border border-gray-200 dark:border-white/10">
-                <Clock className="mx-auto mb-2 text-primary" size={24} />
-                <div className="font-bold text-xl text-gray-900 dark:text-white mb-1">{t.time}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{t.action}</div>
-              </div>
-            ))}
+        {/* Detailed Conversion Process */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Step-by-Step Conversion</h2>
+            <p className="text-gray-600 dark:text-gray-400">A systematic process ensuring safety and compliance.</p>
+          </div>
+
+          <div className="relative">
+            {/* Connecting Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-white/10 -translate-x-1/2 hidden md:block"></div>
+
+            <div className="space-y-12">
+              {[
+                {
+                  step: "01",
+                  title: "Strip & Prep",
+                  desc: "For Full-Electric, we remove the engine, fuel tank, and exhaust. For Dual-Mode, we prepare the wheel hub integration.",
+                  icon: RefreshCw
+                },
+                {
+                  step: "02",
+                  title: "Core Installation",
+                  desc: "Installation of the high-torque Motor, Battery Pack, and Intelligent Controller unit.",
+                  icon: Zap
+                },
+                {
+                  step: "03",
+                  title: "System Integration",
+                  desc: "Wiring harness modification, dashboard integration, and recharge system setup.",
+                  icon: Cpu
+                },
+                {
+                  step: "04",
+                  title: "Certification",
+                  desc: "Final testing against ARAI standards and RTO re-registration as an Electric Vehicle.",
+                  icon: FileCheck
+                }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`flex flex-col md:flex-row items-center gap-8 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  <div className={`w-full md:w-1/2 ${idx % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}>
+                    <div className="hidden md:block">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-white dark:bg-black border-4 border-primary shadow-xl">
+                    <item.icon className="text-primary" size={24} />
+                    <div className="absolute -top-10 text-4xl font-bold text-gray-200 dark:text-white/5 select-none">{item.step}</div>
+                  </div>
+
+                  <div className={`w-full md:w-1/2 ${idx % 2 !== 0 ? 'md:text-right' : 'md:text-left'}`}>
+                    <div className="md:hidden text-center">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+                    </div>
+                    {/* Placeholder for visual or extra info if needed */}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 
