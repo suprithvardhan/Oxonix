@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { Target, Globe, Users, Milestone, Calendar, Linkedin, ArrowUpRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { Target, Globe, Users, Milestone, Calendar, Linkedin, ArrowUpRight, Twitter, Mail } from 'lucide-react';
 
 // Counter Component for animated numbers
 const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => {
@@ -27,6 +27,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
 };
 
 const About: React.FC = () => {
+  const [active, setActive] = useState<number | null>(0);
   const viewportConfig = { once: true, margin: "-100px 0px -50px 0px", amount: 0.2 };
 
   const timeline = [
@@ -37,10 +38,36 @@ const About: React.FC = () => {
   ];
 
   const team = [
-    { name: "Arjun Mehta", role: "Founder & CEO", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" },
-    { name: "Dr. Priya Singh", role: "CTO", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
-    { name: "Vikram Das", role: "Head of Operations", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" },
-    { name: "Sarah Jen", role: "Lead Engineer", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" },
+    {
+      name: "Kethavath Srikanth",
+      role: "Founder & CEO",
+      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+      bio: [
+        "B.Tech graduate in Electronics and Communication Engineering.",
+        "Skilled firmware developer with deep experience in CubeSat systems and electric vehicle technologies.",
+        "Strong expertise in embedded systems.",
+        "Published papers in IEEE & ICICI on can sized satellite and ADC using CNTFET Ternary in September 2023, November 2024."
+      ]
+    },
+    {
+      name: "Mohammad Ashraf ul Hussain",
+      role: "Lead Battery Engineer",
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      bio: [
+        "Passionate about technology, problem-solving, and applying technical knowledge to real-world projects.",
+        "Collaborates closely with battery engineers to build reliable, high-performance solutions for both space-grade and EV applications."
+      ]
+    },
+    {
+      name: "Sairohit",
+      role: "Product Development Lead",
+      img: "https://images.unsplash.com/photo-1581092921461-eab62e97a783?auto=format&fit=crop&w=400&q=80",
+      bio: [
+        "Mechanical engineer skilled in CAD design, structural analysis, and rapid prototyping using SolidWorks, Fusion 360, ANSYS, CNC, and 3D printing.",
+        "Hands-on experience at American Air Filter (AAF), giving him strong exposure to industrial-quality engineering and manufacturing standards.",
+        "Expertise in composites, automation, and embedded systems."
+      ]
+    },
   ];
 
   return (
@@ -213,26 +240,34 @@ const About: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-400 mt-2">The minds behind the machine.</p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="flex flex-col md:flex-row gap-4 h-[500px] max-w-6xl mx-auto">
             {team.map((member, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={viewportConfig}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="group"
+                layout
+                onClick={() => setActive(idx)}
+                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'md:flex-[3] flex-[3]' : 'md:flex-[1] flex-[1]'}`}
               >
-                <div className="relative overflow-hidden rounded-xl mb-4 bg-gray-100 dark:bg-black">
-                  <img
-                    src={member.img}
-                    alt={member.name}
-                    className="w-full aspect-[4/5] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover object-top" />
+                <div className={`absolute inset-0 bg-black/60 transition-opacity duration-500 ${active === idx ? 'opacity-40' : 'opacity-80'}`}></div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end overflow-hidden">
+                  {active !== idx ? (
+                    <div className="absolute inset-0 flex items-center justify-center md:items-end md:justify-start md:p-8">
+                      <div className="md:-rotate-90 md:origin-bottom-left md:mb-12 whitespace-nowrap transform md:translate-x-[-50%]">
+                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">{member.name}</h3>
+                        <p className="text-primary text-xs md:text-sm uppercase tracking-wider mt-1">{member.role}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md relative z-10">
+                      <h3 className="text-3xl font-bold text-white mb-1">{member.name}</h3>
+                      <p className="text-primary font-medium mb-4">{member.role}</p>
+                      <div className="space-y-2 mb-6">
+                        {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span> {point}</p>)}
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
-                <h3 className="font-bold text-lg text-gray-900 dark:text-white">{member.name}</h3>
-                <p className="text-primary text-sm font-medium">{member.role}</p>
               </motion.div>
             ))}
           </div>

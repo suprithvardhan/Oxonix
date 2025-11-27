@@ -9,6 +9,7 @@ import ProductDetail from './pages/ProductDetail';
 import Certifications from './pages/Certifications';
 import CaseStudies from './pages/CaseStudies';
 import FAQ from './pages/FAQ';
+import CardDemo from './pages/CardDemo';
 import { ThemeProvider } from './components/ThemeContext';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/cardDemo" element={<CardDemo />} />
           </Routes>
         </Layout>
       </Router>
