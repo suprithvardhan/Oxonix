@@ -95,7 +95,7 @@ const FAQ: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
             className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
@@ -104,7 +104,7 @@ const FAQ: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
@@ -118,7 +118,7 @@ const FAQ: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: index * 0.05 }}
               className="mb-4"
             >

@@ -7,7 +7,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
-  const isInView = useInView(ref, { once: true, margin: "-100px 0px -50px 0px" });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   useEffect(() => {
     if (isInView) {
@@ -28,7 +28,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
 
 const About: React.FC = () => {
   const [active, setActive] = useState<number | null>(0);
-  const viewportConfig = { once: true, margin: "-100px 0px -50px 0px", amount: 0.2 };
+  const viewportConfig = { once: true, amount: 0.1 };
 
   const timeline = [
     { year: "2021", title: "Inception", desc: "Started in a garage with a mission to retrofit a single bike." },

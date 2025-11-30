@@ -5,7 +5,7 @@ import { Quote } from 'lucide-react';
 
 const CaseStudies: React.FC = () => {
   // Using a margin that accounts for the fixed navbar (-100px from top) to prevent animations from triggering while covered.
-  const viewportConfig = { once: true, margin: "-100px 0px -50px 0px", amount: 0.2 };
+  const viewportConfig = { once: true, amount: 0.1 };
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">

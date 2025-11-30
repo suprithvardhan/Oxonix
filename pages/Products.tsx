@@ -20,7 +20,7 @@ const Products: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
             className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
@@ -29,7 +29,7 @@ const Products: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
@@ -41,7 +41,7 @@ const Products: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           <button
@@ -68,7 +68,7 @@ const Products: React.FC = () => {
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
               className="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 group flex flex-col shadow-sm hover:shadow-lg"
             >
@@ -128,7 +128,7 @@ const Products: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             className="inline-block mb-6 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold tracking-widest uppercase text-sm"
           >
             Compatibility Check
@@ -156,7 +156,7 @@ const Products: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: idx * 0.05 }}
               className="group relative h-full"
             >

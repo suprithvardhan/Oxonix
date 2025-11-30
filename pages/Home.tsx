@@ -157,7 +157,7 @@ const Home: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 className="relative z-10 bg-white dark:bg-[#111] p-2 rounded-xl shadow-2xl border border-gray-200 dark:border-white/10"
               >
                 <img src="/certificate.png" alt="DPIIT Certificate" className="w-full rounded-lg" />
@@ -186,7 +186,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               className="inline-block mb-4 px-4 py-1.5 rounded-full border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm shadow-sm dark:shadow-none"
             >
               <span className="text-primary text-xs md:text-sm font-bold tracking-widest uppercase">Compatibility</span>
@@ -194,7 +194,7 @@ const Home: React.FC = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: 0.1 }}
               className="font-display text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white"
             >
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: 0.2 }}
               className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
             >
@@ -223,7 +223,7 @@ const Home: React.FC = () => {
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ delay: idx * 0.1 }}
                 className="group relative"
               >
@@ -294,7 +294,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 className={`relative flex md:items-center gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Icon Marker */}
@@ -367,7 +367,7 @@ const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 onClick={() => navigate(`/products/${product.id}`)}
                 className="group cursor-pointer"
               >
