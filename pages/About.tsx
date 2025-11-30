@@ -31,10 +31,13 @@ const About: React.FC = () => {
   const viewportConfig = { once: true, amount: 0 };
 
   const timeline = [
-    { year: "2021", title: "Inception", desc: "Started in a garage with a mission to retrofit a single bike." },
-    { year: "2022", title: "First Prototype", desc: "Developed the X1 Kit and successfully ran pilot tests in Bangalore." },
-    { year: "2023", title: "Certification", desc: "Achieved ARAI & AIS-123 certification for our 2-wheeler and 3-wheeler kits." },
-    { year: "2024", title: "Expansion", desc: "Crossed 1000+ retrofits and opened 25+ partner service centers." }
+    { year: "2023 – 2024", title: "Foundations Built", desc: "In 2023–2024, the founders explored battery technology, satellite power systems, and converted a bicycle into an electric one—laying the early foundation for their EV journey." },
+    { year: "Early 2025", title: "Idea of Oxonix Begins", desc: "In early 2025, rising fuel costs and failing old EVs in rural Telangana highlighted the lack of retrofitting services, inspiring the idea for an affordable conversion-focused brand." },
+    { year: "Mid–Late 2025", title: "Prototype & Development", desc: "By mid–late 2025, we tested four key EV solutions and developed our own indigenous battery system, covering scooty conversions, hybrid bike kits, and full electric bike conversions." },
+    { year: "05/09/2025", title: "Incorporation", desc: "Company incorporated on 05/09/2025 as Oxonix Private Limited." },
+    { year: "08/09/2025", title: "MCA Recognition", desc: "Ministry Of Corporate Affairs RECOGNITION on 08/09/2025." },
+    { year: "Late 2025", title: "Official Recognition", desc: "We also obtained our Startup India / DPIIT recognition and Udyam (MSME) certificate, strengthening our legitimacy and support as a growing EV retrofit startup." },
+    { year: "Future", title: "Pilot Launch", desc: "We plan to launch 50+ vehicles across 3 variants as a pilot project very soon." }
   ];
 
   const team = [
