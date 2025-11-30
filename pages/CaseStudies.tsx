@@ -5,7 +5,7 @@ import { Quote } from 'lucide-react';
 
 const CaseStudies: React.FC = () => {
   // Using a margin that accounts for the fixed navbar (-100px from top) to prevent animations from triggering while covered.
-  const viewportConfig = { once: true, amount: 0.1 };
+  const viewportConfig = { once: true, amount: 0 };
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
@@ -13,8 +13,7 @@ const CaseStudies: React.FC = () => {
         <div className="text-center mb-20">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewportConfig}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="font-display text-3xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
           >
@@ -22,8 +21,7 @@ const CaseStudies: React.FC = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewportConfig}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg"
           >

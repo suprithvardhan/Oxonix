@@ -7,7 +7,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, { damping: 60, stiffness: 100 });
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
 
   useEffect(() => {
     if (isInView) {
@@ -28,7 +28,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
 
 const About: React.FC = () => {
   const [active, setActive] = useState<number | null>(0);
-  const viewportConfig = { once: true, amount: 0.1 };
+  const viewportConfig = { once: true, amount: 0 };
 
   const timeline = [
     { year: "2021", title: "Inception", desc: "Started in a garage with a mission to retrofit a single bike." },
@@ -77,8 +77,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewportConfig}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="font-display text-4xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white"
           >
@@ -86,8 +85,7 @@ const About: React.FC = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewportConfig}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
           >

@@ -23,8 +23,7 @@ const Technology: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="font-display text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white"
           >
@@ -32,8 +31,7 @@ const Technology: React.FC = () => {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-600 dark:text-gray-400 text-lg"
           >
@@ -160,7 +158,7 @@ const Technology: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
             >
@@ -200,7 +198,7 @@ const Technology: React.FC = () => {
                 key={i}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.5 }}
                 className="flex items-start gap-4 bg-white dark:bg-white/5 p-6 rounded-xl border border-gray-200 dark:border-white/10"
               >
@@ -258,7 +256,7 @@ const Technology: React.FC = () => {
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  viewport={{ once: true, amount: 0 }}
                   transition={{ delay: idx * 0.1 }}
                   className={`flex flex-col md:flex-row items-center gap-8 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                 >
