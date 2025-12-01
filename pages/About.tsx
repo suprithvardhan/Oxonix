@@ -57,8 +57,9 @@ const About: React.FC = () => {
       role: "Lead Battery Engineer",
       img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
       bio: [
-        "Passionate about technology, problem-solving, and applying technical knowledge to real-world projects.",
-        "Collaborates closely with battery engineers to build reliable, high-performance solutions for both space-grade and EV applications."
+        "Passionate about technology and real-world problem-solving.",
+        "At Oxonix, he works closely with battery engineers to develop reliable, high-performance energy solutions for EV and space-grade applications.",
+        "His technical mindset and hands-on approach strengthen Oxonix’s innovation and product quality."
       ]
     },
     {
@@ -71,6 +72,26 @@ const About: React.FC = () => {
         "Expertise in composites, automation, and embedded systems."
       ]
     },
+    {
+      name: "Mudavath Anil Kumar",
+      role: "Full-stack & Embedded Systems Engineer",
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      bio: [
+        "Skilled full-stack and embedded systems engineer at Oxonix.",
+        "With strong expertise in VLSI and embedded hardware, he contributes directly to Oxonix’s EV retrofitting, battery systems, and controller development.",
+        "His problem-solving and debugging skills ensure that Oxonix delivers reliable, efficient, and user-focused technology solutions."
+      ]
+    },
+    {
+      name: "Eslavath Ramdas",
+      role: "Simulation & Software Engineer",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      bio: [
+        "Skilled in Unity, C#, and real-time system modeling.",
+        "He develops EV simulation tools, virtual training modules, and supports software automation.",
+        "With experience in AI-driven simulations and full-stack web technologies, he helps enhance Oxonix’s R&D, testing workflow, and digital platforms."
+      ]
+    }
   ];
 
   return (
