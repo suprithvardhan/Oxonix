@@ -262,35 +262,95 @@ const About: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-400 mt-2">The minds behind the machine.</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 h-[800px] md:h-[500px] max-w-6xl mx-auto">
+          {/* CSS for Flip Animation */}
+          <style>{`
+            .perspective-1000 { perspective: 1000px; }
+            .transform-style-3d { transform-style: preserve-3d; }
+            .backface-hidden { backface-visibility: hidden; }
+            .flip-card-inner {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transition: transform 0.8s;
+              transform-style: preserve-3d;
+            }
+            .group:hover .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+            .flip-card-front, .flip-card-back {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+            }
+            .flip-card-back {
+              transform: rotateY(180deg);
+            }
+          `}</style>
+
+          {/* Desktop View: Accordion */}
+          <div className="hidden md:flex flex-row gap-4 h-[500px] max-w-6xl mx-auto">
             {team.map((member, idx) => (
               <motion.div
                 key={idx}
                 layout
                 onClick={() => setActive(idx)}
-                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'md:flex-[3] flex-[3]' : 'md:flex-[1] flex-[1]'}`}
+                className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'flex-[3]' : 'flex-[1]'}`}
               >
                 <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover object-top" />
                 <div className={`absolute inset-0 bg-black/60 transition-opacity duration-500 ${active === idx ? 'opacity-40' : 'opacity-80'}`}></div>
                 <div className="absolute inset-0 p-8 flex flex-col justify-end overflow-hidden">
                   {active !== idx ? (
-                    <div className="absolute inset-0 flex items-center justify-center md:items-end md:justify-start md:p-8">
-                      <div className="md:-rotate-90 md:origin-bottom-left md:mb-12 whitespace-nowrap transform md:translate-x-[-50%]">
-                        <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">{member.name}</h3>
-                        <p className="text-primary text-xs md:text-sm uppercase tracking-wider mt-1">{member.role}</p>
+                    <div className="absolute inset-0 flex items-end justify-start p-8">
+                      <div className="-rotate-90 origin-bottom-left mb-12 whitespace-nowrap transform translate-x-[-50%]">
+                        <h3 className="text-2xl font-bold text-white tracking-wide">{member.name}</h3>
+                        <p className="text-primary text-sm uppercase tracking-wider mt-1">{member.role}</p>
                       </div>
                     </div>
                   ) : (
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md relative z-10">
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md relative z-10 w-full">
                       <h3 className="text-3xl font-bold text-white mb-1">{member.name}</h3>
                       <p className="text-primary font-medium mb-4">{member.role}</p>
-                      <div className="space-y-2 mb-6">
-                        {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span> {point}</p>)}
+                      <div className="space-y-2 mb-6 max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20">
+                        {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></span> {point}</p>)}
                       </div>
                     </motion.div>
                   )}
                 </div>
               </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile View: Neon Flip Cards */}
+          <div className="md:hidden grid grid-cols-1 gap-8 max-w-md mx-auto px-4">
+            {team.map((member, idx) => (
+              <div key={idx} className="group h-[400px] perspective-1000 cursor-pointer">
+                <div className="flip-card-inner">
+                  {/* Front */}
+                  <div className="flip-card-front rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-gray-900">
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-6">
+                      <h3 className="text-2xl font-bold text-white">{member.name}</h3>
+                      <p className="text-primary font-medium">{member.role}</p>
+                    </div>
+                  </div>
+                  {/* Back */}
+                  <div className="flip-card-back bg-black rounded-2xl p-6 border border-primary/30 flex flex-col justify-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-primary/5"></div>
+                    <h3 className="text-xl font-bold text-white mb-2 relative z-10">{member.name}</h3>
+                    <p className="text-primary text-xs uppercase tracking-widest mb-4 relative z-10">{member.role}</p>
+                    <div className="space-y-3 relative z-10 overflow-y-auto max-h-[220px] pr-2 scrollbar-thin scrollbar-thumb-primary/20">
+                      {member.bio.map((point, i) => (
+                        <div key={i} className="flex items-start gap-2 text-gray-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></div>
+                          <p className="text-sm leading-relaxed">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -125,30 +125,30 @@ const Option1 = () => (
 const Option2 = () => {
     const [active, setActive] = useState<number | null>(0);
     return (
-        <div className="flex flex-col md:flex-row gap-4 h-[800px] md:h-[500px] max-w-6xl mx-auto">
+        <div className="flex flex-row gap-2 md:gap-4 h-[500px] max-w-6xl mx-auto">
             {teamData.map((member, idx) => (
                 <motion.div
                     key={idx}
                     layout
                     onClick={() => setActive(idx)}
-                    className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'md:flex-[3] flex-[3]' : 'md:flex-[1] flex-[1]'}`}
+                    className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'flex-[3]' : 'flex-[1]'}`}
                 >
                     <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover object-top" />
                     <div className={`absolute inset-0 bg-black/60 transition-opacity duration-500 ${active === idx ? 'opacity-40' : 'opacity-80'}`}></div>
-                    <div className="absolute inset-0 p-8 flex flex-col justify-end overflow-hidden">
+                    <div className="absolute inset-0 p-4 md:p-8 flex flex-col justify-end overflow-hidden">
                         {active !== idx ? (
-                            <div className="absolute inset-0 flex items-center justify-center md:items-end md:justify-start md:p-8">
-                                <div className="md:-rotate-90 md:origin-bottom-left md:mb-12 whitespace-nowrap transform md:translate-x-[-50%]">
-                                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide">{member.name}</h3>
-                                    <p className="text-primary text-xs md:text-sm uppercase tracking-wider mt-1">{member.role}</p>
+                            <div className="absolute inset-0 flex items-end justify-start p-4 md:p-8">
+                                <div className="-rotate-90 origin-bottom-left mb-8 md:mb-12 whitespace-nowrap transform translate-x-[-50%]">
+                                    <h3 className="text-lg md:text-2xl font-bold text-white tracking-wide">{member.name}</h3>
+                                    <p className="text-primary text-[10px] md:text-sm uppercase tracking-wider mt-1">{member.role}</p>
                                 </div>
                             </div>
                         ) : (
-                            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md relative z-10">
-                                <h3 className="text-3xl font-bold text-white mb-1">{member.name}</h3>
-                                <p className="text-primary font-medium mb-4">{member.role}</p>
-                                <div className="space-y-2 mb-6 max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20">
-                                    {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></span> {point}</p>)}
+                            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-4 md:p-6 rounded-2xl border border-white/10 max-w-md relative z-10 w-full">
+                                <h3 className="text-xl md:text-3xl font-bold text-white mb-1">{member.name}</h3>
+                                <p className="text-primary text-xs md:text-base font-medium mb-2 md:mb-4">{member.role}</p>
+                                <div className="space-y-2 mb-2 md:mb-6 max-h-[150px] md:max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20">
+                                    {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-xs md:text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></span> {point}</p>)}
                                 </div>
                             </motion.div>
                         )}
@@ -219,12 +219,24 @@ const Option5 = () => (
     </div>
 );
 
+// --- Option 6: The Hybrid (Responsive) ---
+const Option6 = () => (
+    <div>
+        <div className="hidden md:block">
+            <Option2 />
+        </div>
+        <div className="block md:hidden">
+            <Option1 />
+        </div>
+    </div>
+);
+
 const CardDemo = () => {
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-black py-24 px-6 space-y-32">
             <div className="text-center max-w-3xl mx-auto">
                 <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Team Presentation Styles</h1>
-                <p className="text-xl text-gray-600 dark:text-gray-400">Top 5 creative layouts for showcasing the Oxonix team.</p>
+                <p className="text-xl text-gray-600 dark:text-gray-400">Top 6 creative layouts for showcasing the Oxonix team.</p>
             </div>
 
             {[
@@ -233,6 +245,7 @@ const CardDemo = () => {
                 { id: 3, title: "The Floating Glass", desc: "Clean, high-end look.", Comp: Option3 },
                 { id: 4, title: "The Minimalist Slide", desc: "Editorial style.", Comp: Option4 },
                 { id: 5, title: "The HUD Overlay", desc: "Cyberpunk/Tech inspired.", Comp: Option5 },
+                { id: 6, title: "The Hybrid (Responsive)", desc: "Accordion on Desktop, Neon Flip on Mobile.", Comp: Option6 },
             ].map((opt) => (
                 <section key={opt.id} className="border-t border-gray-200 dark:border-white/10 pt-12">
                     <div className="flex items-center gap-4 mb-12 justify-center">
