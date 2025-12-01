@@ -55,7 +55,7 @@ const About: React.FC = () => {
     {
       name: "Mohammad Ashraf ul Hussain",
       role: "Lead Battery Engineer",
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+      img: "/Team/Ashraf.jpg",
       bio: [
         "Passionate about technology and real-world problem-solving.",
         "At Oxonix, he works closely with battery engineers to develop reliable, high-performance energy solutions for EV and space-grade applications.",
@@ -75,7 +75,7 @@ const About: React.FC = () => {
     {
       name: "Mudavath Anil Kumar",
       role: "Full-stack & Embedded Systems Engineer",
-      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+      img: "/Team/Anil.jpg",
       bio: [
         "Skilled full-stack and embedded systems engineer at Oxonix.",
         "With strong expertise in VLSI and embedded hardware, he contributes directly to Oxonix’s EV retrofitting, battery systems, and controller development.",
@@ -85,7 +85,7 @@ const About: React.FC = () => {
     {
       name: "Eslavath Ramdas",
       role: "Simulation & Software Engineer",
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      img: "/Team/Ramdas.jpg",
       bio: [
         "Skilled in Unity, C#, and real-time system modeling.",
         "He develops EV simulation tools, virtual training modules, and supports software automation.",
@@ -262,7 +262,7 @@ const About: React.FC = () => {
             <p className="text-gray-600 dark:text-gray-400 mt-2">The minds behind the machine.</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 h-[500px] max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 h-[800px] md:h-[500px] max-w-6xl mx-auto">
             {team.map((member, idx) => (
               <motion.div
                 key={idx}
