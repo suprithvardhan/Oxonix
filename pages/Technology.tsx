@@ -291,7 +291,7 @@ const Technology: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white dark:bg-surface rounded-3xl p-8 md:p-12 border border-gray-200 dark:border-white/5 shadow-lg"
+          className="bg-white dark:bg-surface rounded-3xl p-6 md:p-12 border border-gray-200 dark:border-white/5 shadow-lg"
         >
           <div className="md:flex justify-between items-center mb-8">
             <div>

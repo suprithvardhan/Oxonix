@@ -15,7 +15,7 @@ const GreenJourney: React.FC = () => {
     };
 
     return (
-        <div className="relative w-full min-h-[700px] bg-gray-100 dark:bg-slate-900 overflow-hidden flex flex-col items-center justify-center py-20 transition-colors duration-1000">
+        <div className="relative w-full min-h-[auto] md:min-h-[600px] bg-gray-100 dark:bg-slate-900 overflow-hidden flex flex-col items-center justify-center py-12 md:py-20 transition-colors duration-1000">
 
             {/* --- Dynamic Background --- */}
             <div className="absolute inset-0 z-0 pointer-events-none">
@@ -97,10 +97,10 @@ const GreenJourney: React.FC = () => {
             <div className="relative z-10 w-full max-w-6xl mx-auto px-4 flex flex-col items-center">
 
                 {/* Header Text */}
-                <motion.div className="text-center mb-12 relative z-20">
+                <motion.div className="text-center mb-8 md:mb-12 relative z-20">
                     <motion.h2
                         layout
-                        className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 drop-shadow-sm dark:drop-shadow-lg"
+                        className="font-display text-3xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 drop-shadow-sm dark:drop-shadow-lg"
                     >
                         {stage === 'electric' ? (
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300">
@@ -112,7 +112,7 @@ const GreenJourney: React.FC = () => {
                             </span>
                         )}
                     </motion.h2>
-                    <motion.p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium">
+                    <motion.p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-medium">
                         {stage === 'electric'
                             ? "Experience silence, savings, and sustainability. Your ride, upgraded."
                             : "High fuel costs. Noise pollution. Carbon emissions. It's time for a change."
@@ -121,13 +121,13 @@ const GreenJourney: React.FC = () => {
                 </motion.div>
 
                 {/* --- The Scanner Reveal Stage --- */}
-                <div className="relative w-full max-w-4xl aspect-[16/9] md:aspect-[2/1] flex items-center justify-center mb-16">
+                <div className="relative w-full max-w-4xl aspect-[16/9] md:aspect-[2/1] flex items-center justify-center mb-12 md:mb-16">
 
                     {/* Image Container */}
                     <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/50">
 
                         {/* 1. Base Layer: Petrol Bike (Always visible underneath) */}
-                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
                             <motion.img
                                 src="/shine_bike_petrol.png"
                                 alt="Petrol Scooter"
@@ -160,7 +160,7 @@ const GreenJourney: React.FC = () => {
                             }}
                         >
                             {/* EV Image Container */}
-                            <div className="absolute inset-0 flex items-center justify-center p-8 bg-gradient-to-r from-emerald-100/50 to-transparent dark:from-emerald-900/20">
+                            <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8 bg-gradient-to-r from-emerald-100/50 to-transparent dark:from-emerald-900/20">
                                 <motion.img
                                     src="/shine_bike_ev.png"
                                     alt="Electric Scooter"
@@ -197,49 +197,49 @@ const GreenJourney: React.FC = () => {
                             )}
                         </AnimatePresence>
 
-                    </div>
+                        {/* Stats Cards - Now Inside the Container for better mobile fit */}
+                        <div className="absolute inset-0 pointer-events-none z-30">
+                            {/* Top Left Stat */}
+                            <StatCard
+                                position="top-2 left-2 md:top-6 md:left-6"
+                                label="Running Cost"
+                                value={stage === 'electric' ? "₹0.25 / km" : "₹2.50 / km"}
+                                type={stage === 'electric' ? 'good' : 'bad'}
+                                icon={<Droplets size={14} />}
+                                delay={0.1}
+                            />
 
-                    {/* Stats Cards - Floating Outside */}
-                    <div className="absolute inset-0 pointer-events-none z-30">
-                        {/* Top Left Stat */}
-                        <StatCard
-                            position="top-[-20px] left-[-10px] md:top-10 md:left-[-40px]"
-                            label="Running Cost"
-                            value={stage === 'electric' ? "₹0.25 / km" : "₹2.50 / km"}
-                            type={stage === 'electric' ? 'good' : 'bad'}
-                            icon={<Droplets size={16} />}
-                            delay={0.1}
-                        />
+                            {/* Bottom Left Stat */}
+                            <StatCard
+                                position="bottom-2 left-2 md:bottom-6 md:left-6"
+                                label="Emissions"
+                                value={stage === 'electric' ? "Zero" : "High CO2"}
+                                type={stage === 'electric' ? 'good' : 'bad'}
+                                icon={<Wind size={14} />}
+                                delay={0.2}
+                            />
 
-                        {/* Bottom Left Stat */}
-                        <StatCard
-                            position="bottom-[-20px] left-[-10px] md:bottom-10 md:left-[-40px]"
-                            label="Emissions"
-                            value={stage === 'electric' ? "Zero" : "High CO2"}
-                            type={stage === 'electric' ? 'good' : 'bad'}
-                            icon={<Wind size={16} />}
-                            delay={0.2}
-                        />
+                            {/* Top Right Stat */}
+                            <StatCard
+                                position="top-2 right-2 md:top-6 md:right-6"
+                                label="Maintenance"
+                                value={stage === 'electric' ? "Minimal" : "Frequent"}
+                                type={stage === 'electric' ? 'good' : 'bad'}
+                                icon={<Gauge size={14} />}
+                                delay={0.3}
+                            />
 
-                        {/* Top Right Stat */}
-                        <StatCard
-                            position="top-[-20px] right-[-10px] md:top-10 md:right-[-40px]"
-                            label="Maintenance"
-                            value={stage === 'electric' ? "Minimal" : "Frequent"}
-                            type={stage === 'electric' ? 'good' : 'bad'}
-                            icon={<Gauge size={16} />}
-                            delay={0.3}
-                        />
+                            {/* Bottom Right Stat */}
+                            <StatCard
+                                position="bottom-2 right-2 md:bottom-6 md:right-6"
+                                label="Performance"
+                                value={stage === 'electric' ? "Instant Torque" : "Laggy"}
+                                type={stage === 'electric' ? 'good' : 'bad'}
+                                icon={<Zap size={14} />}
+                                delay={0.4}
+                            />
+                        </div>
 
-                        {/* Bottom Right Stat */}
-                        <StatCard
-                            position="bottom-[-20px] right-[-10px] md:bottom-10 md:right-[-40px]"
-                            label="Performance"
-                            value={stage === 'electric' ? "Instant Torque" : "Laggy"}
-                            type={stage === 'electric' ? 'good' : 'bad'}
-                            icon={<Zap size={16} />}
-                            delay={0.4}
-                        />
                     </div>
 
                 </div>

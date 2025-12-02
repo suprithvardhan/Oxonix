@@ -176,7 +176,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Supported Vehicles Section */}
-      <section className="min-h-screen flex items-center py-16 md:py-32 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
+      <section className="min-h-screen flex items-center py-12 md:py-24 bg-gray-50 dark:bg-[#050505] relative overflow-hidden transition-colors duration-300">
         {/* Ambient Background */}
         <div className="absolute top-0 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/20 blur-[100px] md:blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
         <div className="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-500/10 blur-[100px] md:blur-[150px] rounded-full pointer-events-none opacity-50 dark:opacity-100"></div>
@@ -212,7 +212,7 @@ const Home: React.FC = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
               { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
@@ -272,7 +272,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Improved Process Section */}
-      <section className="py-24 bg-white dark:bg-surface transition-colors duration-300">
+      <section className="py-16 md:py-24 bg-white dark:bg-surface transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">How Retrofitting Works</h2>
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Retrofit? */}
-      <section className="py-24 bg-gray-50 dark:bg-black transition-colors duration-300">
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-black transition-colors duration-300">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Why Choose <span className="text-primary">Retrofit?</span></h2>
@@ -348,7 +348,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Products Teaser */}
-      <section className="py-24 bg-white dark:bg-surface overflow-hidden transition-colors duration-300">
+      <section className="py-16 md:py-24 bg-white dark:bg-surface overflow-hidden transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
