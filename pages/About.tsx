@@ -28,7 +28,7 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
 
 const About: React.FC = () => {
   const [active, setActive] = useState<number | null>(0);
-  const viewportConfig = { once: true, amount: 0 };
+  const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -50px 0px" };
 
   const timeline = [
     { year: "2023 – 2024", title: "Foundations Built", desc: "In 2023–2024, the founders explored battery technology, satellite power systems, and converted a bicycle into an electric one—laying the early foundation for their EV journey." },

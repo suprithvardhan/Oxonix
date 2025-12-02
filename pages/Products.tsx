@@ -39,7 +39,7 @@ const Products: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0 }}
+          viewport={{ once: true, amount: 0.1, margin: "-50px" }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           <button
@@ -66,7 +66,7 @@ const Products: React.FC = () => {
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "-50px" }}
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
               className="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 hover:border-primary/50 transition-all duration-300 group flex flex-col shadow-sm hover:shadow-lg"
             >
@@ -126,7 +126,7 @@ const Products: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0 }}
+            viewport={{ once: true, amount: 0.1, margin: "-50px" }}
             className="inline-block mb-6 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold tracking-widest uppercase text-sm"
           >
             Compatibility Check
@@ -154,7 +154,7 @@ const Products: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0 }}
+              viewport={{ once: true, amount: 0.1, margin: "-50px" }}
               transition={{ delay: idx * 0.05 }}
               className="group relative h-full"
             >

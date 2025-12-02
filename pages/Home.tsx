@@ -32,7 +32,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col gap-0">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
+      <section className="relative min-h-screen flex items-center pt-10 md:pt-20 overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent dark:from-primary/20 dark:via-black dark:to-black opacity-40"></div>
 
         {/* Background Grid */}
@@ -61,6 +61,27 @@ const Home: React.FC = () => {
             <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-lg leading-relaxed font-medium">
               Oxonix retrofits legacy petrol 2-wheelers & 3-wheelers into high-performance electric machines. Save costs, zero emissions, zero compromise.
             </motion.p>
+
+            {/* Mobile Only Slider */}
+            <motion.div variants={itemVariants} className="block md:hidden mb-8 relative">
+              <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl shadow-gray-300 dark:shadow-primary/10 group">
+                <BeforeAfterSlider
+                  beforeImage="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+                  afterImage="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80"
+                  className="aspect-[4/3]"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent pointer-events-none flex items-end justify-between gap-2">
+                  <div className="bg-black/60 backdrop-blur-md border border-primary/30 p-2 rounded-lg text-center">
+                    <p className="text-primary font-bold text-sm">70%</p>
+                    <p className="text-[8px] text-gray-300 uppercase tracking-wider">Savings</p>
+                  </div>
+                  <div className="bg-black/60 backdrop-blur-md border border-primary/30 p-2 rounded-lg text-center">
+                    <p className="text-accent font-bold text-sm">0g</p>
+                    <p className="text-[8px] text-gray-300 uppercase tracking-wider">CO2</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
             <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">
               <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-200">
@@ -91,7 +112,7 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative hidden md:block"
           >
             {/* Before/After Slider in Hero */}
             <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl shadow-gray-300 dark:shadow-primary/10 group">

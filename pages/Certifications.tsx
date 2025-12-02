@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FileCheck, Award, Shield, Globe, CheckCircle2 } from 'lucide-react';
 
 const Certifications: React.FC = () => {
-  const viewportConfig = { once: true, amount: 0 };
+  const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -50px 0px" };
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
