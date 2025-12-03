@@ -1,15 +1,56 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Cpu, Battery, Zap, ShieldAlert, Thermometer, Lock, Clock, RefreshCw, FileCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useTheme } from '../components/ThemeContext';
 
-const data = [
-  { name: 'Year 1', Petrol: 120000, Electric: 25000 },
-  { name: 'Year 2', Petrol: 130000, Electric: 26000 },
-  { name: 'Year 3', Petrol: 140000, Electric: 27000 },
-  { name: 'Year 4', Petrol: 150000, Electric: 28000 },
-  { name: 'Year 5', Petrol: 160000, Electric: 29000 },
+const savingsData = [
+  { year: 'Year 1', savings: 33000 },
+  { year: 'Year 2', savings: 66000 },
+  { year: 'Year 3', savings: 99000 },
+  { year: 'Year 4', savings: 132000 },
+  { year: 'Year 5', savings: 165000 },
+];
+
+const maintenanceData = [
+  { year: '2021', ICE: 12000, EV: 2000 },
+  { year: '2022', ICE: 13000, EV: 2200 },
+  { year: '2023', ICE: 15000, EV: 2500 },
+  { year: '2024', ICE: 17000, EV: 2800 },
+  { year: '2025', ICE: 18000, EV: 3000 },
+];
+
+const growthData = [
+  { year: '2020', demand: 10 },
+  { year: '2021', demand: 18 },
+  { year: '2022', demand: 30 },
+  { year: '2023', demand: 45 },
+  { year: '2024', demand: 70 },
+  { year: '2025', demand: 95 },
+];
+
+const marketSizeData = [
+  { year: '2020', size: 5 },
+  { year: '2021', size: 7 },
+  { year: '2022', size: 10 },
+  { year: '2023', size: 14 },
+  { year: '2024', size: 19 },
+  { year: '2025', size: 25 },
+  { year: '2026', size: 32 },
+  { year: '2027', size: 40 },
+  { year: '2028', size: 49 },
+  { year: '2029', size: 59 },
+  { year: '2030', size: 70 },
+];
+
+const batteryPriceData = [
+  { year: '2018', price: 140 },
+  { year: '2019', price: 132 },
+  { year: '2020', price: 120 },
+  { year: '2021', price: 110 },
+  { year: '2022', price: 102 },
+  { year: '2023', price: 96 },
+  { year: '2024', price: 90 },
 ];
 
 const Technology: React.FC = () => {
@@ -285,48 +326,181 @@ const Technology: React.FC = () => {
           </div>
         </div>
 
-        {/* Chart Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white dark:bg-surface rounded-3xl p-6 md:p-12 border border-gray-200 dark:border-white/5 shadow-lg"
-        >
-          <div className="md:flex justify-between items-center mb-8">
-            <div>
-              <h2 className="font-display text-3xl font-bold mb-2 text-gray-900 dark:text-white">Running Cost Comparison</h2>
-              <p className="text-gray-600 dark:text-gray-400">Cumulative operational cost (Fuel/Electricity + Maintenance) in INR</p>
-            </div>
+        {/* Data-Driven Insights Section */}
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Data-Driven Performance</h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              We don't just claim performance; we prove it. Explore the data behind the retrofitting revolution.
+            </p>
           </div>
 
-          <div className="h-[300px] md:h-[400px] w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={data}
-                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
-                <XAxis dataKey="name" stroke={isDark ? "#888" : "#4b5563"} />
-                <YAxis stroke={isDark ? "#888" : "#4b5563"} />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: isDark ? '#000' : '#fff',
-                    borderColor: isDark ? '#333' : '#e5e7eb',
-                    color: isDark ? '#fff' : '#000'
-                  }}
-                  itemStyle={{ color: isDark ? '#fff' : '#000' }}
-                />
-                <Legend wrapperStyle={{ color: isDark ? '#fff' : '#000' }} />
-                <Bar dataKey="Petrol" fill="#ef4444" name="Petrol Vehicle Cost" />
-                <Bar dataKey="Electric" fill="#5CFF6F" name="Oxonix Retrofit Cost" />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="space-y-20">
+            {/* Category 1: The Economic Advantage */}
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+                <h3 className="font-display text-2xl font-bold text-primary uppercase tracking-widest">The Economic Advantage</h3>
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Graph 1: 5-Year Savings */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="bg-white dark:bg-surface rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-white/5 shadow-lg"
+                >
+                  <h4 className="font-display text-xl font-bold mb-2 text-gray-900 dark:text-white">Illustrative 5-Year Savings</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Cumulative savings in INR after retrofitting.</p>
+                  <div className="h-[300px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={savingsData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
+                        <XAxis dataKey="year" stroke={isDark ? "#888" : "#4b5563"} />
+                        <YAxis stroke={isDark ? "#888" : "#4b5563"} />
+                        <Tooltip contentStyle={{ backgroundColor: isDark ? '#000' : '#fff', borderColor: isDark ? '#333' : '#e5e7eb', color: isDark ? '#fff' : '#000' }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="savings" name="Total Savings (₹)" stroke="#fbbf24" strokeWidth={3} dot={{ r: 6, fill: "#fbbf24" }} activeDot={{ r: 8 }} />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/10 rounded-xl border border-yellow-100 dark:border-yellow-900/20">
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
+                      <span className="font-bold">Insight:</span> By Year 5, your savings (₹1.6L+) can exceed the cost of a new vehicle.
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Graph 2: Maintenance Cost Comparison */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="bg-white dark:bg-surface rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-white/5 shadow-lg"
+                >
+                  <h4 className="font-display text-xl font-bold mb-2 text-gray-900 dark:text-white">ICE vs EV Maintenance</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Annual maintenance cost comparison (₹).</p>
+                  <div className="h-[300px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={maintenanceData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
+                        <XAxis dataKey="year" stroke={isDark ? "#888" : "#4b5563"} />
+                        <YAxis stroke={isDark ? "#888" : "#4b5563"} />
+                        <Tooltip contentStyle={{ backgroundColor: isDark ? '#000' : '#fff', borderColor: isDark ? '#333' : '#e5e7eb', color: isDark ? '#fff' : '#000' }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="ICE" name="ICE Vehicle" stroke="#fbbf24" strokeWidth={2} dot={{ r: 4 }} />
+                        <Line type="monotone" dataKey="EV" name="Retrofitted EV" stroke="#f97316" strokeWidth={2} dot={{ r: 4 }} />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <div className="mt-4 p-4 bg-orange-50 dark:bg-orange-900/10 rounded-xl border border-orange-100 dark:border-orange-900/20">
+                    <p className="text-sm text-orange-800 dark:text-orange-200 font-medium">
+                      <span className="font-bold">Insight:</span> EV maintenance is ~80% cheaper because there are fewer moving parts to fail.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Category 2: Market Momentum */}
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+                <h3 className="font-display text-2xl font-bold text-primary uppercase tracking-widest">Market Momentum</h3>
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Graph 3: Growth Trend */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="bg-white dark:bg-surface rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-white/5 shadow-lg"
+                >
+                  <h4 className="font-display text-xl font-bold mb-2 text-gray-900 dark:text-white">Retrofitting Demand</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Growth trend index of EV retrofitting in India.</p>
+                  <div className="h-[300px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={growthData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
+                        <XAxis dataKey="year" stroke={isDark ? "#888" : "#4b5563"} />
+                        <YAxis stroke={isDark ? "#888" : "#4b5563"} />
+                        <Tooltip contentStyle={{ backgroundColor: isDark ? '#000' : '#fff', borderColor: isDark ? '#333' : '#e5e7eb', color: isDark ? '#fff' : '#000' }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="demand" name="Demand Index" stroke="#fbbf24" strokeWidth={2} dot={{ r: 4 }} />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                </motion.div>
+
+                {/* Graph 4: Market Size Growth */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="bg-white dark:bg-surface rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-white/5 shadow-lg"
+                >
+                  <h4 className="font-display text-xl font-bold mb-2 text-gray-900 dark:text-white">Market Size Growth (2020-2030)</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Projected growth of the EV retrofitting market index.</p>
+                  <div className="h-[300px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={marketSizeData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
+                        <XAxis dataKey="year" stroke={isDark ? "#888" : "#4b5563"} />
+                        <YAxis stroke={isDark ? "#888" : "#4b5563"} />
+                        <Tooltip contentStyle={{ backgroundColor: isDark ? '#000' : '#fff', borderColor: isDark ? '#333' : '#e5e7eb', color: isDark ? '#fff' : '#000' }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="size" name="Market Size Index" stroke="#f97316" strokeWidth={3} dot={{ r: 6, fill: "#f97316" }} activeDot={{ r: 8 }} />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Category 3: Technology Trends */}
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+                <h3 className="font-display text-2xl font-bold text-primary uppercase tracking-widest">Technology Trends</h3>
+                <div className="h-px bg-gray-200 dark:bg-white/10 flex-grow"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Graph 5: Battery Price Drop */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="bg-white dark:bg-surface rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-white/5 shadow-lg lg:col-span-2"
+                >
+                  <h4 className="font-display text-xl md:text-2xl font-bold mb-2 text-gray-900 dark:text-white">Illustrative Battery Price Drop Trend</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Global battery price trend ($/kWh) showing increasing affordability.</p>
+                  <div className="h-[300px] md:h-[400px] w-full">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={batteryPriceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#333" : "#e5e7eb"} />
+                        <XAxis dataKey="year" stroke={isDark ? "#888" : "#4b5563"} />
+                        <YAxis stroke={isDark ? "#888" : "#4b5563"} />
+                        <Tooltip contentStyle={{ backgroundColor: isDark ? '#000' : '#fff', borderColor: isDark ? '#333' : '#e5e7eb', color: isDark ? '#fff' : '#000' }} />
+                        <Legend />
+                        <Line type="monotone" dataKey="price" name="Battery Price ($/kWh)" stroke="#fbbf24" strokeWidth={3} dot={{ r: 6, fill: "#fbbf24" }} activeDot={{ r: 8 }} />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/10 rounded-xl border border-green-100 dark:border-green-900/20">
+                    <p className="text-sm text-green-800 dark:text-green-200 font-medium">
+                      <span className="font-bold">Insight:</span> As battery technology matures, prices are dropping, making EV conversion more affordable than ever.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
-          <div className="mt-6 text-center bg-primary/10 border border-primary/20 p-4 rounded-lg">
-            <p className="text-primary font-bold">Insight: You recover the cost of retrofitting within 18-24 months of usage.</p>
-          </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
