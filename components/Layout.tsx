@@ -159,8 +159,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div className="col-span-1">
               <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm md:text-lg">Contact</h4>
               <div className="flex flex-col gap-1 md:gap-2 text-[10px] md:text-sm text-gray-600 dark:text-gray-400 break-words">
-                <p>srikanthkethavth99@gmail.com</p>
-                <p>+91 961 840 2450</p>
+                <p>oxonixx99@gmail.com</p>
+                <p>+91 738 294 5403</p>
                 <p>Hyderabad</p>
                 <button onClick={openWhatsApp} className="text-primary font-bold hover:underline flex items-center gap-1 mt-2">
                   Chat <MessageCircle size={12} />

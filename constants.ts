@@ -1,7 +1,7 @@
 import { NavItem, Product, VehicleType, CaseStudy, FAQItem } from './types';
 
 export const BRAND_NAME = "Oxonix Pvt. Ltd.";
-export const WHATSAPP_NUMBER = "9618402450"; // Updated number
+export const WHATSAPP_NUMBER = "7382945403"; // Updated number
 export const WHATSAPP_MSG = "Hello Oxonix Team, I'm interested in retrofitting my vehicle.";
 
 export const NAV_ITEMS: NavItem[] = [

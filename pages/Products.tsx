@@ -147,8 +147,7 @@ const Products: React.FC = () => {
             { brand: "/Brands_supported/tvs_logo.png", model: "XL 100", image: "/Brands_supported/xl100_bike.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
             { brand: "/Brands_supported/honda_logo.png", model: "Activa", image: "/Brands_supported/activa_scooty.png", type: "Scooter", color: "from-yellow-500/20 to-orange-500/20" },
             { brand: "/Brands_supported/honda_logo.png", model: "Shine", image: "/Brands_supported/shine_bike.png", type: "Motorcycle", color: "from-red-500/20 to-red-800/20" },
-            { brand: "/Brands_supported/hero_logo.png", model: "HF Deluxe", image: "/bike-hf.png", type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
-            { brand: "/Brands_supported/tvs_logo.png", model: "Apache", image: "/bike-apache.png", type: "Motorcycle", color: "from-blue-600/20 to-blue-900/20" },
+            { brand: "/Brands_supported/hero_logo.png", model: "HF Deluxe", image: "/Brands_supported/Hf_deluxe_bike.png", type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
           ].map((bike, idx) => (
             <motion.div
               key={idx}
