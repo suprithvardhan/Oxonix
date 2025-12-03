@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileCheck, Award, Shield, Globe, CheckCircle2 } from 'lucide-react';
+import { FileCheck, Award, Shield, Globe, CheckCircle2, Clock } from 'lucide-react';
 
 const Certifications: React.FC = () => {
   const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -50px 0px" };
@@ -138,6 +138,84 @@ const Certifications: React.FC = () => {
                 <p className="text-sm text-primary font-medium">{cert.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Upcoming Certifications Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportConfig}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-bold mb-4">
+              <Clock size={16} /> IN PROGRESS
+            </div>
+            <h2 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-4">Upcoming Certifications</h2>
+            <p className="text-gray-600 dark:text-gray-400">We are continuously working on acquiring new standards.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* BIS Certification */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">
+                APPLIED
+              </div>
+              <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
+                <img src="/upcoming_certifications/BIs.jpg" alt="BIS" className="w-full h-full object-contain rounded-full" />
+              </div>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">BIS Certification</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Under IS 16046</p>
+            </motion.div>
+
+            {/* ISO 9001 */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">
+                IN PROCESS
+              </div>
+              <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
+                <img src="/upcoming_certifications/Iso900.jpg" alt="ISO 9001" className="w-full h-full object-contain rounded-full" />
+              </div>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ISO 9001</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Quality Management</p>
+            </motion.div>
+
+            {/* ARAI */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">
+                PENDING
+              </div>
+              <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
+                <img src="/upcoming_certifications/Arai.jpg" alt="ARAI" className="w-full h-full object-contain rounded-full" />
+              </div>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ARAI Approval</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Automotive Research</p>
+            </motion.div>
+
+            {/* ICAT */}
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">
+                PENDING
+              </div>
+              <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
+                <img src="/upcoming_certifications/Icat.jpg" alt="ICAT" className="w-full h-full object-contain rounded-full" />
+              </div>
+              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ICAT Approval</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Intl. Centre for Auto Tech</p>
+            </motion.div>
           </div>
         </motion.div>
 
