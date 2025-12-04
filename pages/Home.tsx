@@ -55,10 +55,10 @@ const Home: React.FC = () => {
             <motion.div variants={itemVariants} className="inline-block border border-green-600/30 dark:border-primary/30 rounded-full px-4 py-1 mb-6 bg-green-600/10 dark:bg-primary/10 text-green-700 dark:text-primary text-sm font-bold tracking-wider">
               ENGINEERED FOR THE FUTURE
             </motion.div>
-            <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
-              Convert Your Vehicle <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600 dark:to-accent">To Electric</span>
+            <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
+              Convert Your Vehicle <br className="block md:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600 dark:to-accent">To Electric</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-lg leading-relaxed font-medium">
+            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-sm md:text-lg mb-6 md:mb-8 max-w-lg leading-relaxed font-medium">
               Oxonix retrofits legacy petrol 2-wheelers & 3-wheelers into high-performance electric machines. Save costs, zero emissions, zero compromise.
             </motion.p>
 
@@ -66,8 +66,8 @@ const Home: React.FC = () => {
             <motion.div variants={itemVariants} className="block md:hidden mb-8 relative">
               <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl shadow-gray-300 dark:shadow-primary/10 group">
                 <BeforeAfterSlider
-                  beforeImage="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
-                  afterImage="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80"
+                  beforeImage="/BeforeAfter/Before_Petrol.jpg"
+                  afterImage="/BeforeAfter/After_Electric.jpg"
                   className="aspect-[4/3]"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent pointer-events-none flex items-end justify-between gap-2">
