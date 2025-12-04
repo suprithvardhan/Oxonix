@@ -117,8 +117,8 @@ const Home: React.FC = () => {
             {/* Before/After Slider in Hero */}
             <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl shadow-gray-300 dark:shadow-primary/10 group">
               <BeforeAfterSlider
-                beforeImage="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
-                afterImage="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80"
+                beforeImage="/BeforeAfter/Before_Petrol.jpg"
+                afterImage="/BeforeAfter/After_Electric.jpg"
                 className="aspect-[4/3] md:aspect-video"
               />
 
