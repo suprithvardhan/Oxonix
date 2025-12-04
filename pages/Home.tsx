@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="inline-block border border-primary/30 rounded-full px-4 py-1 mb-6 bg-primary/10 text-primary text-sm font-semibold tracking-wider">
+            <motion.div variants={itemVariants} className="inline-block border border-green-600/30 dark:border-primary/30 rounded-full px-4 py-1 mb-6 bg-green-600/10 dark:bg-primary/10 text-green-700 dark:text-primary text-sm font-bold tracking-wider">
               ENGINEERED FOR THE FUTURE
             </motion.div>
             <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
@@ -278,7 +278,7 @@ const Home: React.FC = () => {
           <div className="mt-12 text-center">
             <button
               onClick={() => navigate('/products#supported-models')}
-              className="inline-flex items-center gap-2 text-primary font-bold hover:text-white transition-colors border border-primary/30 hover:border-primary px-8 py-3 rounded-full hover:bg-primary/10"
+              className="inline-flex items-center gap-2 text-primary font-bold hover:text-black transition-colors border border-primary/30 hover:border-primary px-8 py-3 rounded-full hover:bg-primary"
             >
               View All Supported Models <ArrowRight size={18} />
             </button>

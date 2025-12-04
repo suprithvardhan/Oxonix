@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: 'https://images.unsplash.com/photo-1623054467661-6e50d19f2903?auto=format&fit=crop&w=800&q=80', // Placeholder
+    image: '/products/oxonix_ev_scooty.png',
     gallery: [],
     priceEstimate: 'Contact for Price'
   },
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80', // Placeholder
+    image: '/products/ev_retrofit_kit.png',
     gallery: [],
     priceEstimate: '75% cheaper than new EVs'
   },
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: 'https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&w=800&q=80', // Placeholder
+    image: '/products/hybrid_motorcycle_kit.png',
     gallery: [],
     priceEstimate: 'Contact for Price'
   },
@@ -83,7 +83,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80', // Placeholder
+    image: '/products/full_electric_motorcycle_kit.png',
     gallery: [],
     priceEstimate: 'Contact for Price'
   }
