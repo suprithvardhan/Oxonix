@@ -126,8 +126,8 @@ const Technology: React.FC = () => {
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
                   {activeTab === 'full'
-                    ? "Complete transformation of your vehicle. We strip the ICE components to create a lightweight, high-efficiency pure electric machine."
-                    : "The best of both worlds. Keep your engine for backup while enjoying the economy of electric drive for your daily commute."}
+                    ? "Complete transformation of your vehicle. We strip the ICE components to create a lightweight, high-efficiency pure electric machine. Go Electric with Oxonix — Premium EV Kits from ₹35,000 Onwards."
+                    : "The best of both worlds. Keep your engine for backup while enjoying the economy of electric drive for your daily commute. Switch to Hybrid Power — Oxonix Hybrid Kits from ₹43,000 Only."}
                 </p>
 
                 <ul className="space-y-4 mb-8">
@@ -174,25 +174,59 @@ const Technology: React.FC = () => {
         <div className="flex flex-col gap-16 md:gap-24 mb-16 md:mb-24">
           {[
             {
-              icon: Battery,
-              title: "Battery Systems",
-              subtitle: "LFP / NMC Chemistry",
-              desc: "High-density LFP/NMC cells with BMS featuring 15+ protections and IP67 waterproof rating.",
-              image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
-            },
-            {
               icon: Cpu,
-              title: "Smart IoT – SmartIO™",
-              subtitle: "Connected Intelligence",
-              desc: "Real-time Live GPS tracking, detailed ride analytics, and predictive maintenance alerts.",
-              image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=800&q=80"
+              title: "IoT SMART BMS",
+              subtitle: "Intelligent Battery Management",
+              desc: "OXONIX’S IoT Smart BMS provides real-time monitoring, safety protection, and cloud connectivity. It manages battery health, protects against faults, and offers app-based tracking.",
+              specs: [
+                "Communication: Bluetooth + WiFi / LoRa",
+                "Monitoring: Cell voltage, temperature, SOC, SOH",
+                "Protection: OV/UV, short circuit, thermal cutoff",
+                "Supported Voltages: 48V / 60V / 72V"
+              ],
+              image: "/Technology/IotSmartDevice.png"
             },
             {
               icon: Zap,
-              title: "Lightweight Engineering",
-              subtitle: "Precision Fabrication",
-              desc: "Advanced aluminium frames and CNC fabrication for optimal strength-to-weight ratio.",
-              image: "https://images.unsplash.com/photo-1531297461136-82lw9f3e7991?auto=format&fit=crop&w=800&q=80"
+              title: "CONTROLLER",
+              subtitle: "FOC Intelligent Control",
+              desc: "Oxonix FOC controllers ensure smooth throttle response, better torque control, and efficient power delivery. They integrate seamlessly with our hub motors and Smart BMS.",
+              specs: [
+                "Type: FOC Intelligent Controller",
+                "Voltage: 48V / 60V / 72V",
+                "Rated Current: 20A–40A",
+                "Peak Current: Up to 60A",
+                "Modes: Eco / Normal / Power"
+              ],
+              image: "/Technology/Controller.png"
+            },
+            {
+              icon: RefreshCw,
+              title: "HUB MOTORS",
+              subtitle: "High-Efficiency BLDC",
+              desc: "Oxonix hub motors are high-efficiency BLDC motors designed for smooth, reliable performance in EV scooties and retrofitted vehicles. Built with sealed construction and high-grade windings, they provide strong torque, low noise, and excellent durability.",
+              specs: [
+                "Rated Power: 250W–2000W",
+                "Torque: 18–40 Nm",
+                "Efficiency: >85%",
+                "Wheel Size: 10”, 12”, 17”",
+                "Features: Regen braking, weather-sealed"
+              ],
+              image: "/Technology/HubMotors.png"
+            },
+            {
+              icon: Battery,
+              title: "LiFePO₄ BATTERIES",
+              subtitle: "Superior Safety & Life",
+              desc: "OXONIX LiFePO₄ batteries offer superior safety, long life, and stable performance. Ideal for heavy-duty EV usage, they deliver consistent voltage and high thermal stability suitable for Indian weather.",
+              specs: [
+                "Chemistry: LiFePO₄",
+                "Cycle Life: 3000–8000 cycles",
+                "Energy Density: 90–160 Wh/kg",
+                "Pack Options: 48V / 60V / 72V",
+                "Safety: High thermal stability, low fire risk"
+              ],
+              image: "/Technology/Battery.png"
             }
           ].map((item, idx) => (
             <motion.div
@@ -204,13 +238,12 @@ const Technology: React.FC = () => {
               className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
             >
               <div className="w-full md:w-1/2">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 aspect-video group">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 aspect-video group bg-white dark:bg-white/5">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-contain p-8 group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
                 </div>
               </div>
 
@@ -220,7 +253,19 @@ const Technology: React.FC = () => {
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">{item.title}</h3>
                 <p className="text-primary font-mono mb-6 text-lg">{item.subtitle}</p>
-                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{item.desc}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">{item.desc}</p>
+
+                <div className="bg-gray-100 dark:bg-white/5 rounded-xl p-6 border border-gray-200 dark:border-white/10">
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Key Specifications</h4>
+                  <ul className="space-y-2">
+                    {item.specs.map((spec, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></div>
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </motion.div>
           ))}
