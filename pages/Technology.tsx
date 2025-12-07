@@ -88,19 +88,19 @@ const Technology: React.FC = () => {
           </div>
 
           <div className="flex justify-center mb-12">
-            <div className="bg-white dark:bg-white/5 p-1 rounded-full border border-gray-200 dark:border-white/10 inline-flex relative">
+            <div className="bg-white dark:bg-white/5 p-1 rounded-full border border-gray-200 dark:border-white/10 grid grid-cols-2 relative w-[300px] mx-auto">
               <div
-                className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ease-out ${activeTab === 'full' ? 'left-1 w-[140px]' : 'left-[148px] w-[140px]'}`}
+                className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ease-out w-[calc(50%-4px)] ${activeTab === 'full' ? 'left-1' : 'left-1/2'}`}
               ></div>
               <button
                 onClick={() => setActiveTab('full')}
-                className={`relative z-10 px-8 py-3 rounded-full font-bold transition-colors duration-300 ${activeTab === 'full' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+                className={`relative z-10 py-3 rounded-full font-bold transition-colors duration-300 text-center ${activeTab === 'full' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 Full Electric
               </button>
               <button
                 onClick={() => setActiveTab('dual')}
-                className={`relative z-10 px-8 py-3 rounded-full font-bold transition-colors duration-300 ${activeTab === 'dual' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+                className={`relative z-10 py-3 rounded-full font-bold transition-colors duration-300 text-center ${activeTab === 'dual' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 Dual Power
               </button>

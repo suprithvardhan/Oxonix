@@ -10,6 +10,7 @@ import Certifications from './pages/Certifications';
 import CaseStudies from './pages/CaseStudies';
 import FAQ from './pages/FAQ';
 import CardDemo from './pages/CardDemo';
+import RetrofitChecker from './pages/RetrofitChecker';
 import { ThemeProvider } from './components/ThemeContext';
 
 import ScrollToTop from './components/ScrollToTop';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cardDemo" element={<CardDemo />} />
+            <Route path="/retrofitchecker" element={<RetrofitChecker />} />
           </Routes>
         </Layout>
       </Router>
