@@ -18,10 +18,15 @@ const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => 
   useEffect(() => {
     return springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Math.floor(latest).toLocaleString('en-US') + suffix;
+        // Handle decimals if value is not an integer
+        const isDecimal = value % 1 !== 0;
+        const formatted = isDecimal
+          ? latest.toFixed(2)
+          : Math.floor(latest).toLocaleString('en-US');
+        ref.current.textContent = formatted + suffix;
       }
     });
-  }, [springValue, suffix]);
+  }, [springValue, suffix, value]);
 
   return <span ref={ref} className="tabular-nums" />;
 };
@@ -169,9 +174,9 @@ const About: React.FC = () => {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
 
           {[
-            { label: "Vehicles Retrofitted", value: 1200, suffix: "+" },
-            { label: "CO2 Saved (Tonnes)", value: 5400, suffix: "+" },
-            { label: "Service Centers", value: 25, suffix: "+" },
+            { label: "Vehicles Retrofitted", value: 10, suffix: "" },
+            { label: "CO2 Saved (Tonnes)", value: 7.88, suffix: "+" },
+            { label: "Service Centers", value: 2, suffix: "+" },
           ].map((stat, idx) => (
             <motion.div
               key={idx}
