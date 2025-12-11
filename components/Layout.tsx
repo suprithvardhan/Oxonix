@@ -172,12 +172,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-200 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-600 gap-4">
-            <p>© 2025 Oxonix P</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-            </div>
+          <div className="border-t border-gray-800 pt-8 mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; {new Date().getFullYear()} OXONIX PRIVATE LIMITED. All rights reserved.</p>
           </div>
         </div>
       </footer>

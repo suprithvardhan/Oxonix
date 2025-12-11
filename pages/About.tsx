@@ -49,7 +49,7 @@ const About: React.FC = () => {
     {
       name: "Kethavath Srikanth",
       role: "Founder & CEO",
-      img: "/Team/Srikanth.jpg",
+      img: "/Team_Members_images/Srikanth.jpg",
       bio: [
         "B.Tech graduate in Electronics and Communication Engineering.",
         "Skilled firmware developer with deep experience in CubeSat systems and electric vehicle technologies.",
@@ -60,7 +60,7 @@ const About: React.FC = () => {
     {
       name: "Mohammad Ashraf ul Hussain",
       role: "Lead Battery Engineer",
-      img: "/Team/Ashraf.jpg",
+      img: "/Team_Members_images/Ashraf.png",
       bio: [
         "Passionate about technology and real-world problem-solving.",
         "At Oxonix, he works closely with battery engineers to develop reliable, high-performance energy solutions for EV and space-grade applications.",
@@ -70,7 +70,7 @@ const About: React.FC = () => {
     {
       name: "Sairohit",
       role: "Product Development Lead",
-      img: "/Team/Rohith.jpg",
+      img: "/Team_Members_images/Sai_Rohit.jpg",
       bio: [
         "Mechanical engineer skilled in CAD design, structural analysis, and rapid prototyping using SolidWorks, Fusion 360, ANSYS, CNC, and 3D printing.",
         "Hands-on experience at American Air Filter (AAF), giving him strong exposure to industrial-quality engineering and manufacturing standards.",
@@ -80,7 +80,7 @@ const About: React.FC = () => {
     {
       name: "Mudavath Anil Kumar",
       role: "Full-stack & Embedded Systems Engineer",
-      img: "/Team/Anil.jpg",
+      img: "/Team_Members_images/Anil_Kumar.png",
       bio: [
         "Skilled full-stack and embedded systems engineer at Oxonix.",
         "With strong expertise in VLSI and embedded hardware, he contributes directly to Oxonix’s EV retrofitting, battery systems, and controller development.",
@@ -90,7 +90,7 @@ const About: React.FC = () => {
     {
       name: "Eslavath Ramdas",
       role: "Simulation & Software Engineer",
-      img: "/Team/Ramdas.jpg",
+      img: "/Team_Members_images/Ramdas.png",
       bio: [
         "Skilled in Unity, C#, and real-time system modeling.",
         "He develops EV simulation tools, virtual training modules, and supports software automation.",
