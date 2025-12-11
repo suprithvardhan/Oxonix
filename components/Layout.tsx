@@ -35,9 +35,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-            <img src="/xonix_logo.png" alt={BRAND_NAME} className="h-10 w-auto object-contain rounded-lg" />
-            <span className="font-display font-bold text-lg md:text-2xl tracking-tight text-primary">{BRAND_NAME}</span>
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
+            <img src="/xonix_logo.png" alt={BRAND_NAME} className="h-10 md:h-12 w-auto object-contain rounded-lg" />
+            <div className="flex flex-col justify-center">
+              <span className="font-display font-bold text-lg md:text-2xl tracking-tight text-primary leading-none mb-0.5">{BRAND_NAME}</span>
+              <span className="text-[0.6rem] md:text-[0.7rem] text-gray-500 dark:text-gray-400 font-medium tracking-[0.15em] uppercase leading-none opacity-80">Where Energy Meets Innovation</span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
