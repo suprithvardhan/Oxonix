@@ -131,7 +131,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-12 mb-12 text-left">
             <div className="col-span-3 md:col-span-1 mb-6 md:mb-0">
               <div className="flex items-center gap-2 mb-4 md:mb-6">
-                <img src="/xonix_logo_with_tagline.png" alt={BRAND_NAME} className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
+                <img src="/xonix_logo.png" alt={BRAND_NAME} className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
                 Pioneering the future of sustainable mobility by retrofitting legacy vehicles with cutting-edge electric technology.
