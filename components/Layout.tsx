@@ -143,7 +143,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <ul className="space-y-2 md:space-y-4 text-xs md:text-sm text-gray-600 dark:text-gray-400">
                 <li><NavLink to="/about" className="hover:text-primary transition-colors">About Us</NavLink></li>
                 <li><NavLink to="/certifications" className="hover:text-primary transition-colors">Certifications</NavLink></li>
-                <li><NavLink to="/case-studies" className="hover:text-primary transition-colors">Case Studies</NavLink></li>
               </ul>
             </div>
 

@@ -551,7 +551,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-8 max-w-4xl mx-auto">Ready to Electrify Your Ride?</h2>
           <p className="text-black/80 text-lg mb-10 max-w-2xl mx-auto font-medium">
-            Join thousands of satisfied customers saving money and the planet. Get a free quote for your vehicle today.
+            Be a satisfied customer by saving money and the planet. Get a free quote for your vehicle today.
           </p>
           <button
             onClick={openWhatsApp}

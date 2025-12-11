@@ -9,7 +9,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Technology', path: '/technology' },
   { label: 'Products', path: '/products' },
   { label: 'Certifications', path: '/certifications' },
-  { label: 'Case Studies', path: '/case-studies' },
   { label: 'FAQ', path: '/faq' },
   { label: 'About', path: '/about' },
 ];

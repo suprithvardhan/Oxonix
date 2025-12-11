@@ -7,7 +7,6 @@ import Technology from './pages/Technology';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Certifications from './pages/Certifications';
-import CaseStudies from './pages/CaseStudies';
 import FAQ from './pages/FAQ';
 import CardDemo from './pages/CardDemo';
 import RetrofitChecker from './pages/RetrofitChecker';
@@ -28,7 +27,6 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/certifications" element={<Certifications />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cardDemo" element={<CardDemo />} />
             <Route path="/retrofitchecker" element={<RetrofitChecker />} />
