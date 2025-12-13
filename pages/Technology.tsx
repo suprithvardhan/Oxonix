@@ -183,7 +183,7 @@ const Technology: React.FC = () => {
         </div>
 
         {/* 3D Component Breakdown Simulation */}
-        <div className="flex flex-col gap-16 md:gap-24 mb-16 md:mb-24">
+        <div className="flex flex-col gap-16 md:gap-16 lg:gap-24 mb-16 md:mb-20 lg:mb-24">
           {[
             {
               icon: Cpu,

@@ -25,7 +25,7 @@ const Products: React.FC = () => {
                             <span className="inline-block py-1.5 px-4 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-gray-300 text-sm font-bold uppercase tracking-widest border border-gray-200 dark:border-white/10 mb-6 backdrop-blur-md">
                                 Intelligent Conversion Kits
                             </span>
-                            <h1 className="font-display text-5xl md:text-8xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight leading-tight">
+                            <h1 className="font-display text-5xl md:text-6xl lg:text-8xl font-bold mb-6 text-gray-900 dark:text-white tracking-tight leading-tight">
                                 Select Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500">Power</span>
                             </h1>
                             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-xl font-light leading-relaxed">
@@ -42,7 +42,7 @@ const Products: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white dark:bg-[#0c0c0c] border-2 border-gray-200 dark:border-white/10 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-gray-200/50 dark:shadow-none"
+                            className="bg-white dark:bg-[#0c0c0c] border-2 border-gray-200 dark:border-white/10 rounded-[3rem] p-8 md:p-8 lg:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-gray-200/50 dark:shadow-none"
                         >
                             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-500"></div>
 
@@ -56,7 +56,7 @@ const Products: React.FC = () => {
                                             <Zap size={24} />
                                         </div>
                                     </div>
-                                    <h3 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">RIDE +</h3>
+                                    <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">RIDE +</h3>
                                     <p className="text-gray-500 dark:text-gray-400 text-lg">Optimized for efficiency and daily urban mobility.</p>
                                 </div>
 
@@ -98,7 +98,7 @@ const Products: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1, duration: 0.6 }}
-                            className="bg-[#111] dark:bg-black border border-gray-800 dark:border-white/10 rounded-[3rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-2 ring-1 ring-white/10"
+                            className="bg-[#111] dark:bg-black border border-gray-800 dark:border-white/10 rounded-[3rem] p-8 md:p-8 lg:p-12 relative overflow-hidden group hover:shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-2 ring-1 ring-white/10"
                         >
                             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
                             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
@@ -116,7 +116,7 @@ const Products: React.FC = () => {
                                             <Zap size={24} />
                                         </div>
                                     </div>
-                                    <h3 className="font-display text-4xl md:text-6xl font-bold text-white mb-3 tracking-tight">RIDE ²</h3>
+                                    <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">RIDE ²</h3>
                                     <p className="text-gray-400 text-lg">Enhanced torque and range for the true enthusiast.</p>
                                 </div>
 
@@ -157,7 +157,7 @@ const Products: React.FC = () => {
                 {/* 2. VEHICLE PRICING (Moved Below) */}
                 <div className="mb-40 space-y-32">
                     <div className="text-center mb-24">
-                        <h2 className="font-display text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                             Complete <span className="underline decoration-primary/30 decoration-4 underline-offset-8">Retrofitting</span> Cost
                         </h2>
                         <p className="text-gray-500 dark:text-gray-400 text-xl font-light">Transparent pricing tailored to your vehicle type.</p>
@@ -166,7 +166,7 @@ const Products: React.FC = () => {
                     {/* SCOOTY SECTION */}
                     <div className="relative group max-w-7xl mx-auto">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent blur-3xl opacity-50 rounded-[3rem] -z-10"></div>
-                        <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-gray-100 dark:border-white/5 hover:border-blue-500/20 transition-colors duration-500">
+                        <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-100 dark:border-white/5 hover:border-blue-500/20 transition-colors duration-500">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -176,7 +176,7 @@ const Products: React.FC = () => {
                             >
                                 <div className="mb-10">
                                     <span className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2 block">City Commuter</span>
-                                    <h3 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX SCOOTY</h3>
+                                    <h3 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX SCOOTY</h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-xl leading-relaxed font-light">
                                         Transform your daily commuter into a silent, efficient electric machine. Experience smooth acceleration and zero vibrations.
                                     </p>
@@ -212,7 +212,7 @@ const Products: React.FC = () => {
                     {/* BIKE SECTION */}
                     <div className="relative group max-w-7xl mx-auto">
                         <div className="absolute inset-0 bg-gradient-to-l from-red-500/5 to-transparent blur-3xl opacity-50 rounded-[3rem] -z-10"></div>
-                        <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-16 border border-gray-100 dark:border-white/5 hover:border-red-500/20 transition-colors duration-500">
+                        <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-100 dark:border-white/5 hover:border-red-500/20 transition-colors duration-500">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9, x: -50 }}
                                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -233,7 +233,7 @@ const Products: React.FC = () => {
                             >
                                 <div className="mb-10">
                                     <span className="text-red-500 font-bold uppercase tracking-widest text-sm mb-2 block">Performance Beast</span>
-                                    <h3 className="font-display text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX MOTORBIKE</h3>
+                                    <h3 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX MOTORBIKE</h3>
                                     <p className="text-gray-600 dark:text-gray-400 text-xl leading-relaxed font-light md:ml-auto">
                                         Upgrade your bike for superior range and torque. Keep the classic look, but drive the future.
                                     </p>
