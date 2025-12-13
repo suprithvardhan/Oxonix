@@ -175,15 +175,7 @@ const Technology: React.FC = () => {
                     alt={activeTab === 'full' ? "Full Electric" : "Hybrid Model"}
                     className="rounded-2xl w-full h-[400px] object-contain"
                   />
-                  <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                    <div className="flex items-center justify-between">
-                      <span className="text-white font-bold">Efficiency</span>
-                      <span className="text-primary font-bold">{activeTab === 'full' ? '100%' : '85%'}</span>
-                    </div>
-                    <div className="w-full bg-white/20 h-1.5 rounded-full mt-2 overflow-hidden">
-                      <div className={`h-full bg-primary rounded-full ${activeTab === 'full' ? 'w-full' : 'w-[85%]'}`}></div>
-                    </div>
-                  </div>
+                  {/* Efficiency bar removed by user request */}
                 </div>
               </div>
             </motion.div>
