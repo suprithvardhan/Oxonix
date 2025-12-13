@@ -102,7 +102,7 @@ const Technology: React.FC = () => {
                 onClick={() => setActiveTab('dual')}
                 className={`relative z-10 py-3 rounded-full font-bold transition-colors duration-300 text-center ${activeTab === 'dual' ? 'text-black' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
               >
-                Dual Power
+                Hybrid Model
               </button>
             </div>
           </div>
@@ -122,38 +122,58 @@ const Technology: React.FC = () => {
                   {activeTab === 'full' ? 'Pure EV Experience' : 'Hybrid Flexibility'}
                 </div>
                 <h3 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                  {activeTab === 'full' ? 'Full Electric Conversion' : 'Dual-Mode Conversion'}
+                  {activeTab === 'full' ? 'Full Electric Conversion' : 'HYBRID Model'}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
                   {activeTab === 'full'
                     ? "Complete transformation of your vehicle. We strip the ICE components to create a lightweight, high-efficiency pure electric machine. Go Electric with Oxonix — Premium EV Kits from ₹35,000 Onwards."
-                    : "The best of both worlds. Keep your engine for backup while enjoying the economy of electric drive for your daily commute. Switch to Hybrid Power — Oxonix Hybrid Kits from ₹43,000 Only."}
+                    : "The best of both worlds. Keep your engine for backup while enjoying the economy of electric drive for your daily commute."}
                 </p>
 
-                <ul className="space-y-4 mb-8">
-                  {[
-                    activeTab === 'full' ? "Remove Engine, Fuel Tank, Exhaust & Drivetrain" : "Keep ICE components intact",
-                    activeTab === 'full' ? "Install Motor + Battery Pack + Controller" : "Add Electric Hub Motor + Battery",
-                    activeTab === 'full' ? "Modify Wiring & Electronics" : "Switchable Drive Modes (Petrol/Electric)",
-                    "ARAI Approved Kit",
-                    "RTO Re-registration as EV"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                      <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                {activeTab === 'full' ? (
+                  <ul className="space-y-4 mb-8">
+                    {[
+                      "Remove Engine, Fuel Tank, Exhaust & Drivetrain",
+                      "Install Motor + Battery Pack + Controller",
+                      "Modify Wiring & Electronics",
+                      "ARAI Approved Kit",
+                      "RTO Re-registration as EV"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                        <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="bg-white dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden mb-8">
+                    <div className="grid grid-cols-2 bg-primary/10 border-b border-gray-200 dark:border-white/10">
+                      <div className="p-3 font-bold text-primary text-sm uppercase tracking-wider">Name</div>
+                      <div className="p-3 font-bold text-primary text-sm uppercase tracking-wider border-l border-gray-200 dark:border-white/10">Value</div>
+                    </div>
+                    {[
+                      { name: "PRICE", value: "45K+" },
+                      { name: "BATTERY", value: "1.8KW – 2.4KW" },
+                      { name: "TOP SPEED", value: "25kmph +" },
+                      { name: "RANGE", value: "140km+ (IC + battery)" }
+                    ].map((stat, i) => (
+                      <div key={i} className="grid grid-cols-2 border-b last:border-0 border-gray-200 dark:border-white/10">
+                        <div className="p-3 font-medium text-gray-700 dark:text-gray-300">{stat.name}</div>
+                        <div className="p-3 font-bold text-gray-900 dark:text-white border-l border-gray-200 dark:border-white/10">{stat.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="order-1 md:order-2 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl blur-2xl"></div>
                 <div className="relative bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-2 shadow-2xl overflow-hidden">
                   <img
                     src={activeTab === 'full'
-                      ? "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80"
-                      : "https://images.unsplash.com/photo-1623079400394-f07955b7b09d?auto=format&fit=crop&w=800&q=80"}
-                    alt={activeTab === 'full' ? "Full Electric" : "Dual Power"}
-                    className="rounded-2xl w-full h-[400px] object-cover"
+                      ? "/Full_Electric_Conversion.png"
+                      : "/Dual_Conversion.png"}
+                    alt={activeTab === 'full' ? "Full Electric" : "Hybrid Model"}
+                    className="rounded-2xl w-full h-[400px] object-contain"
                   />
                   <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md p-4 rounded-xl border border-white/10">
                     <div className="flex items-center justify-between">
