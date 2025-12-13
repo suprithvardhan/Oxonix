@@ -260,7 +260,7 @@ const Home: React.FC = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
             {[
               { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
               { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
@@ -387,7 +387,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0, duration: 0.6 }}
               viewport={{ once: true, amount: 0 }}
               onClick={() => navigate('/products')}
-              className="group cursor-pointer h-[500px] relative rounded-[2.5rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-[#0c0c0c]"
+              className="group cursor-pointer h-[350px] md:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-[#0c0c0c]"
             >
               {/* Image Background */}
               <div className="absolute inset-0 bg-gray-900 overflow-hidden">
@@ -440,7 +440,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0.15, duration: 0.6 }}
               viewport={{ once: true, amount: 0 }}
               onClick={() => navigate('/products')}
-              className="group cursor-pointer h-[500px] relative rounded-[2.5rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-[#050505]"
+              className="group cursor-pointer h-[350px] md:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-[#050505]"
             >
               {/* Image Background */}
               <div className="absolute inset-0 bg-black overflow-hidden">
