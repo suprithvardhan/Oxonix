@@ -43,8 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.path}
@@ -67,8 +66,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden lg:flex">
             <button
               onClick={openWhatsApp}
               className="bg-primary hover:bg-green-400 text-black font-bold px-5 py-2 rounded-full text-sm transition-all flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40"
@@ -77,8 +75,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </button>
           </div>
 
-          {/* Mobile Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-4">
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-900 dark:text-white"
@@ -99,7 +96,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl pt-24 px-6 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl pt-24 px-6 lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-6">
               {NAV_ITEMS.map((item) => (

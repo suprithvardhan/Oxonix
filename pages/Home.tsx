@@ -387,7 +387,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0, duration: 0.6 }}
               viewport={{ once: true, amount: 0 }}
               onClick={() => navigate('/products')}
-              className="group cursor-pointer h-[350px] md:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-[#0c0c0c]"
+              className="group cursor-pointer h-[350px] md:h-[400px] lg:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white dark:bg-[#0c0c0c]"
             >
               {/* Image Background */}
               <div className="absolute inset-0 bg-gray-900 overflow-hidden">
@@ -400,13 +400,13 @@ const Home: React.FC = () => {
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-20 flex flex-col justify-end h-full">
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-8 lg:p-10 z-20 flex flex-col justify-end h-full">
                 <div className="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
                   <div className="inline-block px-3 py-1 mb-4 rounded-lg bg-blue-500/20 backdrop-blur-md border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-widest">
                     Standard Edition
                   </div>
 
-                  <h3 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">RIDE +</h3>
+                  <h3 className="font-display text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight">RIDE +</h3>
                   <p className="text-gray-300 text-base line-clamp-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto font-light">
                     The perfect balance for your daily commute. Optimized for city traffic and efficiency.
                   </p>
@@ -440,7 +440,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0.15, duration: 0.6 }}
               viewport={{ once: true, amount: 0 }}
               onClick={() => navigate('/products')}
-              className="group cursor-pointer h-[350px] md:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-[#050505]"
+              className="group cursor-pointer h-[350px] md:h-[400px] lg:h-[500px] relative rounded-[2rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-[#050505]"
             >
               {/* Image Background */}
               <div className="absolute inset-0 bg-black overflow-hidden">
@@ -453,13 +453,13 @@ const Home: React.FC = () => {
               </div>
 
               {/* Content Overlay */}
-              <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 z-20 flex flex-col justify-end h-full">
+              <div className="absolute inset-x-0 bottom-0 p-8 md:p-8 lg:p-10 z-20 flex flex-col justify-end h-full">
                 <div className="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
                   <div className="inline-block px-3 py-1 mb-4 rounded-lg bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest">
                     Pro Performance
                   </div>
 
-                  <h3 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">RIDE ²</h3>
+                  <h3 className="font-display text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight">RIDE ²</h3>
                   <p className="text-gray-300 text-base line-clamp-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto font-light">
                     Unleash maximum power and extended range for the ultimate electric experience.
                   </p>
