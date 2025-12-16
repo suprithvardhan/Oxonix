@@ -146,23 +146,20 @@ const Technology: React.FC = () => {
                     ))}
                   </ul>
                 ) : (
-                  <div className="bg-white dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10 overflow-hidden mb-8">
-                    <div className="grid grid-cols-2 bg-primary/10 border-b border-gray-200 dark:border-white/10">
-                      <div className="p-3 font-bold text-primary text-sm uppercase tracking-wider">Name</div>
-                      <div className="p-3 font-bold text-primary text-sm uppercase tracking-wider border-l border-gray-200 dark:border-white/10">Value</div>
-                    </div>
+                  <ul className="space-y-4 mb-8">
                     {[
-                      { name: "PRICE", value: "45K+" },
-                      { name: "BATTERY", value: "1.8KW – 2.4KW" },
-                      { name: "TOP SPEED", value: "25kmph +" },
-                      { name: "RANGE", value: "140km+ (IC + battery)" }
-                    ].map((stat, i) => (
-                      <div key={i} className="grid grid-cols-2 border-b last:border-0 border-gray-200 dark:border-white/10">
-                        <div className="p-3 font-medium text-gray-700 dark:text-gray-300">{stat.name}</div>
-                        <div className="p-3 font-bold text-gray-900 dark:text-white border-l border-gray-200 dark:border-white/10">{stat.value}</div>
-                      </div>
+                      "Keep ICE components intact",
+                      "Add Electric Hub Motor + Battery",
+                      "Switchable Drive Modes (Petrol/Electric)",
+                      "ARAI Approved Kit",
+                      "RTO Re-registration as EV"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                        <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={20} />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
               </div>
               <div className="order-1 md:order-2 relative">
