@@ -12,7 +12,7 @@ const PRODUCT_TIERS = [
         badgeColor: 'blue',
         icon: Zap,
         description: 'Optimized for efficiency and daily urban mobility.',
-        price: '₹35k',
+        price: '₹35,000',
         features: [
             { icon: Battery, text: "1.8 kW Smart Battery", desc: "High-density Li-ion cells" },
             { icon: Gauge, text: "60+ km Range", desc: "Real-world city conditions" },
@@ -39,7 +39,7 @@ const PRODUCT_TIERS = [
         badgeColor: 'purple',
         icon: RefreshCw,
         description: 'Best of both worlds. Electric economy + Petrol backup.',
-        price: '₹45k+',
+        price: '₹45,000+',
         features: [
             { icon: Battery, text: "1.8 - 2.4 kW Battery", desc: "Flexible capacity options" },
             { icon: Gauge, text: "140km+ Range", desc: "Combined IC + Battery range" },
@@ -66,7 +66,7 @@ const PRODUCT_TIERS = [
         badgeColor: 'emerald',
         icon: Zap,
         description: 'Enhanced torque and range for the true enthusiast.',
-        price: '₹47k',
+        price: '₹47,000',
         features: [
             { icon: Battery, text: "2.4 kW Max Battery", desc: "Extended range architecture" },
             { icon: Gauge, text: "90+ km Range", desc: "Superior long-distance capability" },
@@ -277,7 +277,7 @@ const Products: React.FC = () => {
                 {/* SCOOTY SECTION */}
                 <div className="relative group max-w-7xl mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent blur-3xl opacity-50 rounded-[3rem] -z-10"></div>
-                    <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-100 dark:border-white/5 hover:border-blue-500/20 transition-colors duration-500">
+                    <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-200 dark:border-white/10 hover:border-blue-500/20 transition-colors duration-500">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -298,7 +298,7 @@ const Products: React.FC = () => {
                                     <span className="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">Starting From</span>
                                     <div className="flex items-baseline gap-4">
                                         <span className="text-6xl font-bold text-gray-900 dark:text-white tracking-tight">₹45,000</span>
-                                        <span className="px-3 py-1 bg-gray-200 dark:bg-white/10 rounded-full text-xs font-bold uppercase text-gray-600 dark:text-gray-300">Conversion Cost</span>
+                                        {/* Tag removed by user request */}
                                     </div>
                                 </div>
                                 <button onClick={() => navigate('/contact')} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
@@ -323,7 +323,7 @@ const Products: React.FC = () => {
                 {/* BIKE SECTION */}
                 <div className="relative group max-w-7xl mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-l from-red-500/5 to-transparent blur-3xl opacity-50 rounded-[3rem] -z-10"></div>
-                    <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-100 dark:border-white/5 hover:border-red-500/20 transition-colors duration-500">
+                    <div className="grid md:grid-cols-2 gap-12 items-center bg-gray-50/50 dark:bg-[#0a0a0a]/80 backdrop-blur-sm rounded-[3rem] p-8 md:p-10 lg:p-16 border border-gray-200 dark:border-white/10 hover:border-red-500/20 transition-colors duration-500">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, x: -50 }}
                             whileInView={{ opacity: 1, scale: 1, x: 0 }}
@@ -355,7 +355,7 @@ const Products: React.FC = () => {
                                     <span className="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">Starting From</span>
                                     <div className="flex items-baseline gap-4 md:flex-row-reverse">
                                         <span className="text-6xl font-bold text-gray-900 dark:text-white tracking-tight">₹50,000</span>
-                                        <span className="px-3 py-1 bg-gray-200 dark:bg-white/10 rounded-full text-xs font-bold uppercase text-gray-600 dark:text-gray-300">Conversion Cost</span>
+                                        {/* Tag removed by user request */}
                                     </div>
                                 </div>
                                 <button onClick={() => navigate('/contact')} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-red-600 dark:hover:bg-red-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
