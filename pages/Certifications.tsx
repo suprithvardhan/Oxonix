@@ -124,6 +124,12 @@ const Certifications: React.FC = () => {
                 logo: "/make-in-india-new.png",
                 desc: "Indigenous Manufacturing",
                 bg: "bg-white"
+              },
+              {
+                name: "ISO 9001:2015",
+                logo: "/upcoming_certifications/Iso900.jpg",
+                desc: "Quality Management System",
+                bg: "bg-white"
               }
             ].map((cert, idx) => (
               <motion.div
@@ -131,7 +137,7 @@ const Certifications: React.FC = () => {
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all"
               >
-                <div className={`w-32 h-32 mb-6 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner`}>
+                <div className={`w-32 h-32 mb-6 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner overflow-hidden`}>
                   <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
                 </div>
                 <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">{cert.name}</h3>
@@ -172,20 +178,7 @@ const Certifications: React.FC = () => {
               <p className="text-sm text-gray-500 dark:text-gray-400">Under IS 16046</p>
             </motion.div>
 
-            {/* ISO 9001 */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">
-                IN PROCESS
-              </div>
-              <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
-                <img src="/upcoming_certifications/Iso900.jpg" alt="ISO 9001" className="w-full h-full object-contain rounded-full" />
-              </div>
-              <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ISO 9001</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Quality Management</p>
-            </motion.div>
+
 
             {/* ARAI */}
             <motion.div
