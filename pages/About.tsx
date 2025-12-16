@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Target, Globe, Users, Milestone, Calendar, Linkedin, ArrowUpRight, Twitter, Mail } from 'lucide-react';
+import { WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
 
 // Counter Component for animated numbers
 const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => {
@@ -366,7 +367,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-black">Join the Revolution</h2>
           <p className="text-black/80 max-w-2xl mx-auto mb-8 text-lg">Whether you are a vehicle owner looking to retrofit or an investor looking to partner, we want to hear from you.</p>
-          <button className="bg-black text-white font-bold py-4 px-10 rounded-full hover:bg-gray-900 transition-colors flex items-center gap-2 mx-auto shadow-xl">
+          <button onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`, '_blank')} className="bg-black text-white font-bold py-4 px-10 rounded-full hover:bg-gray-900 transition-colors flex items-center gap-2 mx-auto shadow-xl">
             Contact Us <ArrowUpRight size={20} />
           </button>
         </div>

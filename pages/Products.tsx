@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Zap, Battery, Timer, Gauge, CheckCircle2, Star, RefreshCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { WHATSAPP_NUMBER } from '../constants';
 
 // Product Data
 const PRODUCT_TIERS = [
@@ -92,6 +93,11 @@ const SharedProductSection = () => {
     const [activeTab, setActiveTab] = useState('hybrid');
     const navigate = useNavigate();
 
+    const openWhatsApp = (tierName: string) => {
+        const message = `I am interested in the ${tierName} kit.`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    };
+
     return (
         <div className="w-full">
             {/* Desktop Tabs */}
@@ -162,7 +168,7 @@ const SharedProductSection = () => {
                                         ))}
                                     </div>
 
-                                    <button onClick={() => navigate('/contact')} className={`w-full py-5 rounded-xl font-bold text-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-3 group/btn hover:scale-[1.01] active:scale-[0.99] ${tier.theme.btn}`}>
+                                    <button onClick={() => openWhatsApp(tier.name)} className={`w-full py-5 rounded-xl font-bold text-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-3 group/btn hover:scale-[1.01] active:scale-[0.99] ${tier.theme.btn}`}>
                                         Enquire {tier.name} <ArrowRight size={22} className="group-hover/btn:translate-x-1 transition-transform" />
                                     </button>
                                 </div>
@@ -218,7 +224,7 @@ const SharedProductSection = () => {
                                 ))}
                             </div>
 
-                            <button onClick={() => navigate('/contact')} className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${tier.theme.btn}`}>
+                            <button onClick={() => openWhatsApp(tier.name)} className={`w-full py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${tier.theme.btn}`}>
                                 Enquire Now <ArrowRight size={18} />
                             </button>
                         </div>
@@ -231,6 +237,11 @@ const SharedProductSection = () => {
 
 const Products: React.FC = () => {
     const navigate = useNavigate();
+
+    const openWhatsApp = (plan: string) => {
+        const message = `I am interested in the ${plan} plan.`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    };
 
     return (
         <div className="bg-white dark:bg-black min-h-screen py-24 transition-colors duration-300 overflow-hidden relative">
@@ -301,7 +312,7 @@ const Products: React.FC = () => {
                                         {/* Tag removed by user request */}
                                     </div>
                                 </div>
-                                <button onClick={() => navigate('/contact')} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                                <button onClick={() => openWhatsApp("Oxonix Scooty")} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
                                     Enquire Scooty Plan
                                 </button>
                             </div>
@@ -358,7 +369,7 @@ const Products: React.FC = () => {
                                         {/* Tag removed by user request */}
                                     </div>
                                 </div>
-                                <button onClick={() => navigate('/contact')} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-red-600 dark:hover:bg-red-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                                <button onClick={() => openWhatsApp("Oxonix Motorbike")} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-red-600 dark:hover:bg-red-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
                                     Enquire Bike Plan
                                 </button>
                             </div>

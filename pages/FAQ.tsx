@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, MessageCircle } from 'lucide-react';
+import { WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
 
 const faqs = [
   {
@@ -150,7 +151,7 @@ const FAQ: React.FC = () => {
         <div className="mt-12 flex flex-col items-center justify-center">
           <p className="text-gray-500 mb-4">Still have questions?</p>
           <button
-            onClick={() => window.open('https://wa.me/919876543210', '_blank')}
+            onClick={() => window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`, '_blank')}
             className="text-primary font-bold hover:underline flex items-center justify-center gap-2"
           >
             <MessageCircle size={18} /> Chat with our expert
