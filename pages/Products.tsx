@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Zap, Battery, Timer, Gauge, CheckCircle2, Star, RefreshCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { WHATSAPP_NUMBER } from '../constants';
+import SEO from '../components/SEO';
 
 // Product Data
 const PRODUCT_TIERS = [
@@ -245,6 +246,12 @@ const Products: React.FC = () => {
 
     return (
         <div className="bg-white dark:bg-black min-h-screen py-24 transition-colors duration-300 overflow-hidden relative">
+            <SEO
+                title="EV Conversion Kits Price & Products | Scooter & Bike Retrofitting"
+                description="Check Oxonix's affordable EV conversion kit prices for Scooty and Motorbikes. Starting from ₹35,000. Get the best electric vehicle conversion cost in India."
+                keywords={["electric car conversion cost India", "EV conversion kit price", "scooter electric kit price", "electric bike kit India", "affordable EV retrofitting"]}
+                canonicalUrl="https://oxonix.in/products"
+            />
             {/* Ambient Background Elements */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
             <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none"></div>

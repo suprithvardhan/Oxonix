@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import GreenJourney from '../components/GreenJourney';
 import { PRODUCTS, WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
+import SEO from '../components/SEO';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -36,6 +37,12 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-0">
+      <SEO
+        title="Best EV Conversion Kit & Retrofitting Company in India"
+        description="Transform your petrol scooter/bike into electric with Oxonix's government-approved EV conversion kits. Affordable, reliable, and made in India."
+        keywords={["EV conversion kit India", "petrol to electric", "electric bike conversion", "scooter retrofitting"]}
+        canonicalUrl="https://oxonix.in/"
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-10 md:pt-20 overflow-hidden bg-gray-50 dark:bg-black transition-colors duration-300">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent dark:from-primary/20 dark:via-black dark:to-black opacity-40"></div>

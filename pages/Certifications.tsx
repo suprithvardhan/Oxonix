@@ -1,12 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileCheck, Award, Shield, Globe, CheckCircle2, Clock } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Certifications: React.FC = () => {
   const viewportConfig = { once: true, amount: 0.1, margin: "0px 0px -50px 0px" };
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
+      <SEO
+        title="EV Certifications & Approvals India | DPIIT, ARAI, ISO"
+        description="Oxonix is a DPIIT recognized startup with ISO 9001:2015 certification. Our EV conversion kits are certified for safety and approved by ARAI/ICAT."
+        keywords={["EV certification India", "ARAI approved electric kit", "DPIIT recognized startup", "EV safety standards India", "ISO 9001 electric vehicle"]}
+        canonicalUrl="https://oxonix.in/certifications"
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <motion.h1

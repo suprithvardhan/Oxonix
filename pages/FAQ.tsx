@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, MessageCircle } from 'lucide-react';
 import { WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
+import SEO from '../components/SEO';
 
 const faqs = [
   {
@@ -91,6 +92,12 @@ const FAQ: React.FC = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen py-12 md:py-24 transition-colors duration-300">
+      <SEO
+        title="EV Retrofitting FAQs | Oxonix India"
+        description="Common questions about EV conversion kits, RTO approval, battery life, and warranty. Get all your answers about vehicle retrofitting here."
+        keywords={["electric vehicle conversion questions", "EV retrofit RTO rules", "electric bike battery life", "conversion kit warranty", "is EV retrofitting safe"]}
+        canonicalUrl="https://oxonix.in/faq"
+      />
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h1

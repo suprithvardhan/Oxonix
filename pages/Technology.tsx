@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { Cpu, Battery, Zap, ShieldAlert, Thermometer, Lock, Clock, RefreshCw, FileCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useTheme } from '../components/ThemeContext';
+import SEO from '../components/SEO';
 
 const savingsData = [
   { year: 'Year 1', savings: 33000 },
@@ -60,6 +61,12 @@ const Technology: React.FC = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen pt-12 transition-colors duration-300">
+      <SEO
+        title="IoT Enabled EV Retrofit Technology | Smart BMS & FOC Controllers"
+        description="Oxonix uses advanced EV retrofit technology including IoT Smart BMS, FOC Intelligent Controllers, and High-Efficiency Hub Motors for Indian roads."
+        keywords={["EV retrofit technology India", "smart BMS", "FOC controller", "electric vehicle battery India", "hub motor retrofitting"]}
+        canonicalUrl="https://oxonix.in/technology"
+      />
       <div className="container mx-auto px-6 mb-20">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1

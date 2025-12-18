@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Target, Globe, Users, Milestone, Calendar, Linkedin, ArrowUpRight, Twitter, Mail } from 'lucide-react';
 import { WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
+import SEO from '../components/SEO';
 
 // Counter Component for animated numbers
 const Counter = ({ value, suffix = "" }: { value: number, suffix?: string }) => {
@@ -102,6 +103,12 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-black min-h-screen transition-colors duration-300">
+      <SEO
+        title="About Oxonix | Pioneering Electric Vehicle Conversion Company in India"
+        description="Learn about Oxonix, India's leading EV retrofitting startup recognized by DPIIT & Startup India. We transform 2-wheelers into electric vehicles."
+        keywords={["electric vehicle conversion company India", "Oxonix story", "EV startup India", "DIPP226380", "EV certification India"]}
+        canonicalUrl="https://oxonix.in/about"
+      />
       {/* Header */}
       <div className="bg-white dark:bg-surface py-24 border-b border-gray-200 dark:border-white/5">
         <div className="container mx-auto px-6 text-center">
