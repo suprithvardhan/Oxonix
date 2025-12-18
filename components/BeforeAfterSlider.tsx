@@ -5,9 +5,10 @@ interface Props {
   beforeImage: string;
   afterImage: string;
   className?: string;
+  priority?: boolean;
 }
 
-const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className = '' }) => {
+const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className = '', priority = false }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   const handleDrag = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,25 +19,38 @@ const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className
     <div className={`relative w-full aspect-video overflow-hidden rounded-xl border border-white/10 shadow-2xl ${className}`}>
       {/* After Image (Base) */}
       <div className="absolute inset-0 w-full h-full">
-        <img src={afterImage} alt="After Retrofit" className="w-full h-full object-cover" />
+        <img
+          src={afterImage}
+          alt="After Retrofit"
+          className="w-full h-full object-cover"
+          loading={priority ? "eager" : "lazy"}
+          {...(priority ? { fetchPriority: "high" } : {})}
+        />
         <div className="absolute top-4 right-4 bg-primary text-black font-bold px-3 py-1 text-xs rounded uppercase">
           After (Electric)
         </div>
       </div>
 
       {/* Before Image (Clipped) */}
-      <div 
+      <div
         className="absolute inset-0 w-full h-full overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img src={beforeImage} alt="Before Retrofit" className="w-full h-full object-cover" />
+
+        <img
+          src={beforeImage}
+          alt="Before Retrofit"
+          className="w-full h-full object-cover"
+          loading={priority ? "eager" : "lazy"}
+          {...(priority ? { fetchPriority: "high" } : {})}
+        />
         <div className="absolute top-4 left-4 bg-white text-black font-bold px-3 py-1 text-xs rounded uppercase">
           Before (Petrol)
         </div>
       </div>
 
       {/* Slider Handle */}
-      <div 
+      <div
         className="absolute inset-y-0 w-1 bg-primary cursor-ew-resize"
         style={{ left: `${sliderPosition}%` }}
       >

@@ -59,28 +59,41 @@ const Home: React.FC = () => {
         }}></div>
 
         <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+
+          <div
+            className="flex flex-col"
           >
-            <motion.div variants={itemVariants} className="inline-block border border-green-600/30 dark:border-primary/30 rounded-full px-4 py-1 mb-6 bg-green-600/10 dark:bg-primary/10 text-green-700 dark:text-primary text-sm font-bold tracking-wider">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block border border-green-600/30 dark:border-primary/30 rounded-full px-4 py-1 mb-6 bg-green-600/10 dark:bg-primary/10 text-green-700 dark:text-primary text-sm font-bold tracking-wider w-max"
+            >
               ENGINEERED FOR THE FUTURE
             </motion.div>
-            <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
+
+            {/* H1 - LCP Element: Render Immediately (No Animation) */}
+            <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6 text-gray-900 dark:text-white drop-shadow-sm dark:drop-shadow-none">
               Convert Your Vehicle <br className="block md:hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600 dark:to-accent">To Electric</span>
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400 text-sm md:text-lg mb-6 md:mb-8 max-w-lg leading-relaxed font-medium">
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-gray-600 dark:text-gray-400 text-sm md:text-lg mb-6 md:mb-8 max-w-lg leading-relaxed font-medium"
+            >
               Oxonix retrofits legacy petrol 2-wheelers & 3-wheelers into high-performance electric machines. Save costs, zero emissions, zero compromise.
             </motion.p>
 
-            {/* Mobile Only Slider */}
-            <motion.div variants={itemVariants} className="block md:hidden mb-8 relative">
+            {/* Mobile Only Slider - LCP Element: Render Immediately */}
+            <div className="block md:hidden mb-8 relative">
               <div className="relative z-10 w-full rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl shadow-gray-300 dark:shadow-primary/10 group">
                 <BeforeAfterSlider
                   beforeImage="/BeforeAfter/Before_Petrol.jpg"
                   afterImage="/BeforeAfter/After_Electric.jpg"
                   className="aspect-[4/3]"
+                  priority={true}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent pointer-events-none flex items-end justify-between gap-2">
                   <div className="bg-black/60 backdrop-blur-md border border-primary/30 p-2 rounded-lg text-center">
@@ -93,18 +106,29 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="mb-8 flex items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mb-8 flex items-center gap-4"
+            >
               <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-200">
                 <img src="/startup-india-logo.png" alt="#StartupIndia" className="h-12" />
               </div>
               <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">
                 Recognized by<br />DPIIT, Govt. of India
               </div>
+
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-4"
+            >
               <button
                 onClick={() => navigate('/technology')}
                 className="bg-primary text-black font-bold px-8 py-4 rounded-full hover:bg-green-400 transition-colors flex items-center gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40"
@@ -118,7 +142,7 @@ const Home: React.FC = () => {
                 Enquire on WhatsApp
               </button>
             </motion.div>
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
