@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Menu, X, MessageCircle, Zap, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, MessageCircle, Zap, ArrowRight, Sun, Moon, Youtube, Twitter, Instagram } from 'lucide-react';
 import { NAV_ITEMS, BRAND_NAME, WHATSAPP_NUMBER, WHATSAPP_MSG } from '../constants';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeContext';
@@ -8,6 +8,12 @@ import { useTheme } from './ThemeContext';
 interface LayoutProps {
   children: React.ReactNode;
 }
+
+const SOCIAL_LINKS = [
+  { icon: Youtube, href: 'https://youtube.com/@oxonixindia?si=wuSW76NkKeC1Sa8T', color: 'hover:text-[#FF0000]', label: 'YouTube' },
+  { icon: Instagram, href: 'https://instagram.com/oxonixindia', color: 'hover:text-[#E4405F]', label: 'Instagram' },
+  { icon: Twitter, href: 'https://x.com/oxonixindia', color: 'hover:text-[#1DA1F2]', label: 'Twitter' },
+];
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -109,6 +115,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   {item.label}
                 </NavLink>
               ))}
+
+              <div className="pt-6 border-t border-gray-100 dark:border-white/10">
+                <p className="text-gray-500 text-sm mb-4">Follow Us</p>
+                <div className="flex gap-6">
+                  {SOCIAL_LINKS.map((social, idx) => (
+                    <a
+                      key={idx}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-gray-600 dark:text-gray-400 ${social.color} transition-colors p-2 bg-gray-100 dark:bg-white/5 rounded-full`}
+                    >
+                      <social.icon size={32} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
               <button
                 onClick={openWhatsApp}
                 className="mt-8 w-full bg-primary text-black font-bold py-4 rounded-lg text-lg shadow-lg"
@@ -133,9 +157,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <div className="flex items-center gap-2 mb-4 md:mb-6">
                 <img src="/xonix_logo.png" alt={BRAND_NAME} className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white p-1 shadow-sm dark:bg-white/5 dark:shadow-none" />
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
                 Pioneering the future of sustainable mobility by retrofitting legacy vehicles with cutting-edge electric technology.
               </p>
+              <div className="flex gap-4">
+                {SOCIAL_LINKS.map((social, idx) => (
+                  <motion.a
+                    key={idx}
+                    whileHover={{ y: -3 }}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-gray-500 dark:text-gray-400 ${social.color} transition-colors`}
+                    title={social.label}
+                  >
+                    <social.icon size={28} />
+                  </motion.a>
+                ))}
+              </div>
             </div>
 
             <div className="col-span-1">

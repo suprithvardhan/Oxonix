@@ -128,17 +128,25 @@ const Certifications: React.FC = () => {
               {
                 name: "ISO 9001:2015",
                 logo: "/upcoming_certifications/Iso900.jpg",
+                secondaryLogo: "/IQMCB.png",
                 desc: "Quality Management System",
                 bg: "bg-white"
               }
-            ].map((cert, idx) => (
+            ].map((cert: any, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-[#111] border border-gray-200 dark:border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl transition-all"
               >
-                <div className={`w-32 h-32 mb-6 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner overflow-hidden`}>
-                  <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
+                <div className={`mb-6 flex items-center justify-center gap-4`}>
+                  <div className={`w-32 h-32 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner overflow-hidden border border-gray-200 dark:border-white/10`}>
+                    <img src={cert.logo} alt={cert.name} className="w-full h-full object-contain" />
+                  </div>
+                  {cert.secondaryLogo && (
+                    <div className={`w-32 h-32 rounded-full ${cert.bg} flex items-center justify-center p-4 shadow-inner overflow-hidden border border-gray-200 dark:border-white/10`}>
+                      <img src={cert.secondaryLogo} alt="IQMCB Logo" className="w-full h-full object-contain" />
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">{cert.name}</h3>
                 <p className="text-sm text-primary font-medium">{cert.desc}</p>
