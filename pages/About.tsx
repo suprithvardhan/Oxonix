@@ -72,6 +72,7 @@ const About: React.FC = () => {
     {
       name: "Sairohit",
       role: "Product Development Lead",
+      imgPos: 'object-center',
       img: "/Team_Members_images/Sai_Rohit.jpg",
       bio: [
         "Mechanical engineer skilled in CAD design, structural analysis, and rapid prototyping using SolidWorks, Fusion 360, ANSYS, CNC, and 3D printing.",
@@ -311,7 +312,7 @@ const About: React.FC = () => {
                 onClick={() => setActive(idx)}
                 className={`relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-500 ease-out ${active === idx ? 'flex-[3]' : 'flex-[1]'}`}
               >
-                <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover object-top" />
+                <img src={member.img} alt={member.name} className={`absolute inset-0 w-full h-full object-cover ${member.imgPos || 'object-top'}`} />
                 <div className={`absolute inset-0 bg-black/60 transition-opacity duration-500 ${active === idx ? 'opacity-40' : 'opacity-80'}`}></div>
                 <div className="absolute inset-0 p-8 flex flex-col justify-end overflow-hidden">
                   {active !== idx ? (
@@ -322,10 +323,10 @@ const About: React.FC = () => {
                       </div>
                     </div>
                   ) : (
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-6 rounded-2xl border border-white/10 max-w-md relative z-10 w-full">
-                      <h3 className="text-3xl font-bold text-white mb-1">{member.name}</h3>
-                      <p className="text-primary font-medium mb-4">{member.role}</p>
-                      <div className="space-y-2 mb-6 max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20">
+                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-black/60 backdrop-blur-md p-5 rounded-2xl border border-white/10 max-w-md relative z-10 w-full">
+                      <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
+                      <p className="text-primary font-medium mb-3">{member.role}</p>
+                      <div className="space-y-2 mb-3 max-h-[140px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/20">
                         {member.bio.map((point, i) => <p key={i} className="text-gray-200 text-sm flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></span> {point}</p>)}
                       </div>
                     </motion.div>
