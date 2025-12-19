@@ -47,7 +47,15 @@ const About: React.FC = () => {
     { year: "Future", title: "Pilot Launch", desc: "We plan to launch 50+ vehicles across 3 variants as a pilot project very soon." }
   ];
 
-  const team = [
+  interface TeamMember {
+    name: string;
+    role: string;
+    img: string;
+    bio: string[];
+    imgPos?: string;
+  }
+
+  const team: TeamMember[] = [
     {
       name: "Kethavath Srikanth",
       role: "Founder & CEO",

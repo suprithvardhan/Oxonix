@@ -635,7 +635,7 @@ const Home: React.FC = () => {
               <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
 
                 <iframe
-                  src="https://maps.google.com/maps?q=H%20NO.%202-4-227%2C%20MADULAGADDA%20THANDA%2C%20Vikarabad%2C%20Hyderabad%2C%20Telangana%2C%20India%2C%20501101&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Oxonix+India+Private+Limited+01&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
@@ -646,7 +646,7 @@ const Home: React.FC = () => {
 
                 <div className="absolute bottom-6 right-6 z-20">
                   <a
-                    href="https://www.google.com/maps/dir//H+NO.+2-4-227,+MADULAGADDA+THANDA,+Vikarabad,+Hyderabad,+Telangana,+India,+501101"
+                    href="https://www.google.com/maps/dir//Oxonix+India+Private+Limited+01"
                     target="_blank"
                     rel="noreferrer"
                     className="bg-white text-black font-bold px-6 py-3 rounded-full shadow-lg hover:bg-primary transition-colors flex items-center gap-2"
