@@ -17,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
     description,
     keywords = [],
     canonicalUrl,
-    image = '/social-share-image.jpg', // You might want a default default image
+    image = '/xonix_logo.png', // Default OG Image
     type = 'website'
 }) => {
     const metaTitle = `${title} | Oxonix India`;
@@ -27,13 +27,19 @@ const SEO: React.FC<SEOProps> = ({
     const defaultKeywords = [
         "EV conversion kit India",
         "vehicle retrofitting India",
+        "retro fitting india",
         "electric vehicle conversion company India",
         "EV retrofit technology India",
         "EV certification India",
         "electric car conversion cost India",
         "Oxonix",
         "Electric Scooter Conversion",
-        "Petrol to Electric"
+        "Petrol to Electric",
+        "two wheeler retrofitting",
+        "bike conversion kit price",
+        "scooter to electric converter",
+        "RTO approved EV kits",
+        "retrofitting startup India"
     ];
 
     const allKeywords = [...new Set([...defaultKeywords, ...keywords])].join(', ');
