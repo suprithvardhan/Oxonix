@@ -304,7 +304,7 @@ const Products: React.FC = () => {
                             className="order-2 md:order-1 relative z-10"
                         >
                             <div className="mb-10">
-                                <span className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2 block">City Commuter</span>
+
                                 <h3 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX SCOOTY</h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-xl leading-relaxed font-light">
                                     Transform your daily commuter into a silent, efficient electric machine. Experience smooth acceleration and zero vibrations.
@@ -316,7 +316,44 @@ const Products: React.FC = () => {
                                     <span className="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">Starting From</span>
                                     <div className="flex items-baseline gap-4">
                                         <span className="text-6xl font-bold text-gray-900 dark:text-white tracking-tight">₹45,000</span>
-                                        {/* Tag removed by user request */}
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4 mt-6 w-full">
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400">
+                                                <Battery size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Battery</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">1.5 - 2.0 kW</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400">
+                                                <Gauge size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Top Speed</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">25 kmph</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400">
+                                                <Gauge size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Range</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">75 km</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400">
+                                                <Timer size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Charge Time</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">3 hrs</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <button onClick={() => openWhatsApp("Oxonix Scooty")} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
@@ -361,7 +398,7 @@ const Products: React.FC = () => {
                             className="relative z-10 md:text-right flex flex-col items-start md:items-end"
                         >
                             <div className="mb-10">
-                                <span className="text-red-500 font-bold uppercase tracking-widest text-sm mb-2 block">Performance Beast</span>
+
                                 <h3 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-none">OXONIX MOTORBIKE</h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-xl leading-relaxed font-light md:ml-auto">
                                     Upgrade your bike for superior range and torque. Keep the classic look, but drive the future.
@@ -373,7 +410,44 @@ const Products: React.FC = () => {
                                     <span className="text-sm uppercase tracking-wider text-gray-500 font-bold mb-1">Starting From</span>
                                     <div className="flex items-baseline gap-4 md:flex-row-reverse">
                                         <span className="text-6xl font-bold text-gray-900 dark:text-white tracking-tight">₹50,000</span>
-                                        {/* Tag removed by user request */}
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-4 mt-6 w-full">
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400">
+                                                <Battery size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Battery</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">1.8 - 2.4 kW</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400">
+                                                <Gauge size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Top Speed</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">25 kmph</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400">
+                                                <Gauge size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Range</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">86 km</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-3 bg-white dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+                                            <div className="p-2 rounded-lg bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400">
+                                                <Timer size={18} />
+                                            </div>
+                                            <div>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">Charge Time</p>
+                                                <p className="font-bold text-gray-900 dark:text-white">3 hrs</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <button onClick={() => openWhatsApp("Oxonix Motorbike")} className="px-10 py-5 rounded-full font-bold text-lg bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-red-600 dark:hover:bg-red-500 hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
