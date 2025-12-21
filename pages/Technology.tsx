@@ -174,8 +174,8 @@ const Technology: React.FC = () => {
                 <div className="relative bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-2 shadow-2xl overflow-hidden">
                   <img
                     src={activeTab === 'full'
-                      ? "/Full_Electric_Conversion.png"
-                      : "/Dual_Conversion.png"}
+                      ? "/Full_Electric_Conversion.webp"
+                      : "/Dual_Conversion.webp"}
                     alt={activeTab === 'full' ? "Full Electric" : "Hybrid Model"}
                     className="rounded-2xl w-full h-[400px] object-contain"
                   />
@@ -200,7 +200,7 @@ const Technology: React.FC = () => {
                 "Protection: OV/UV, short circuit, thermal cutoff",
                 "Supported Voltages: 48V / 60V / 72V"
               ],
-              image: "/Technology/IotSmartDevice.png"
+              image: "/Technology/IotSmartDevice.webp"
             },
             {
               icon: Zap,
@@ -214,7 +214,7 @@ const Technology: React.FC = () => {
                 "Peak Current: Up to 60A",
                 "Modes: Eco / Normal / Power"
               ],
-              image: "/Technology/Controller.png"
+              image: "/Technology/Controller.webp"
             },
             {
               icon: RefreshCw,
@@ -228,7 +228,7 @@ const Technology: React.FC = () => {
                 "Wheel Size: 10”, 12”, 17”",
                 "Features: Regen braking, weather-sealed"
               ],
-              image: "/Technology/HubMotors.png"
+              image: "/Technology/HubMotors.webp"
             },
             {
               icon: Battery,
@@ -242,7 +242,7 @@ const Technology: React.FC = () => {
                 "Pack Options: 48V / 60V / 72V",
                 "Safety: High thermal stability, low fire risk"
               ],
-              image: "/Technology/Battery.png"
+              image: "/Technology/Battery.webp"
             }
           ].map((item, idx) => (
             <motion.div

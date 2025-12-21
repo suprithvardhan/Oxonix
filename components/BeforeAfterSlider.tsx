@@ -4,11 +4,13 @@ import { MoveHorizontal } from 'lucide-react';
 interface Props {
   beforeImage: string;
   afterImage: string;
+  beforeImageSrcSet?: string;
+  afterImageSrcSet?: string;
   className?: string;
   priority?: boolean;
 }
 
-const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className = '', priority = false }) => {
+const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, beforeImageSrcSet, afterImageSrcSet, className = '', priority = false }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   const handleDrag = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +23,8 @@ const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className
       <div className="absolute inset-0 w-full h-full">
         <img
           src={afterImage}
+          srcSet={afterImageSrcSet}
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt="After Retrofit"
           className="w-full h-full object-cover"
           loading={priority ? "eager" : "lazy"}
@@ -39,6 +43,8 @@ const BeforeAfterSlider: React.FC<Props> = ({ beforeImage, afterImage, className
 
         <img
           src={beforeImage}
+          srcSet={beforeImageSrcSet}
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt="Before Retrofit"
           className="w-full h-full object-cover"
           loading={priority ? "eager" : "lazy"}

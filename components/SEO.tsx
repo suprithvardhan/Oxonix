@@ -17,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
     description,
     keywords = [],
     canonicalUrl,
-    image = '/xonix_logo.png', // Default OG Image
+    image = '/xonix_logo.webp', // Default OG Image
     type = 'website'
 }) => {
     const metaTitle = `${title} | Oxonix India`;
@@ -49,7 +49,7 @@ const SEO: React.FC<SEOProps> = ({
         "@type": "Organization",
         "name": "Oxonix Private Limited",
         "url": DOMAIN,
-        "logo": `${DOMAIN}/xonix_logo.png`,
+        "logo": `${DOMAIN}/xonix_logo.webp`,
         "sameAs": [
             "https://youtube.com/@oxonixindia",
             "https://instagram.com/oxonixindia",

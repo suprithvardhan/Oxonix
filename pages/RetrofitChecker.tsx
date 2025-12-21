@@ -4,16 +4,16 @@ import { Search, CheckCircle2, AlertCircle, Calendar, IndianRupee, ChevronDown, 
 import { useNavigate } from 'react-router-dom';
 
 const SUPPORTED_VEHICLES = [
-    { name: 'Hero Splendor', type: 'Motorcycle', image: '/Brands_supported/splendor_bike.png' },
-    { name: 'Honda Activa', type: 'Scooter', image: '/Brands_supported/activa_scooty.png' },
-    { name: 'TVS Jupiter', type: 'Scooter', image: '/Brands_supported/jupiter_scooty.png' },
-    { name: 'Hero Passion', type: 'Motorcycle', image: '/Brands_supported/passion_pro_bike.png' },
-    { name: 'Honda Shine', type: 'Motorcycle', image: '/Brands_supported/shine_bike.png' },
+    { name: 'Hero Splendor', type: 'Motorcycle', image: '/Brands_supported/splendor_bike.webp' },
+    { name: 'Honda Activa', type: 'Scooter', image: '/Brands_supported/activa_scooty.webp' },
+    { name: 'TVS Jupiter', type: 'Scooter', image: '/Brands_supported/jupiter_scooty.webp' },
+    { name: 'Hero Passion', type: 'Motorcycle', image: '/Brands_supported/passion_pro_bike.webp' },
+    { name: 'Honda Shine', type: 'Motorcycle', image: '/Brands_supported/shine_bike.webp' },
     { name: 'Suzuki Access', type: 'Scooter', image: '' },
     { name: 'Honda Dio', type: 'Scooter', image: '' },
-    { name: 'Hero HF Deluxe', type: 'Motorcycle', image: '/Brands_supported/Hf_deluxe_bike.png' },
+    { name: 'Hero HF Deluxe', type: 'Motorcycle', image: '/Brands_supported/Hf_deluxe_bike.webp' },
     { name: 'Bajaj Platina', type: 'Motorcycle', image: '' },
-    { name: 'TVS XL 100', type: 'Moped', image: '/Brands_supported/xl100_bike.png' },
+    { name: 'TVS XL 100', type: 'Moped', image: '/Brands_supported/xl100_bike.webp' },
     { name: 'Royal Enfield Classic', type: 'Motorcycle', image: '' }
 ];
 

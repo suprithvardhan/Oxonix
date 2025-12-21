@@ -10,37 +10,10 @@
     content="Oxonix is India's leading EV retrofitting company. We convert petrol scooters and bikes to electric vehicles with government approved kits." />
 
   <!-- Fonts: Space Grotesk (Headings) and Manrope (Body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="preload" href="/xonix_logo.png" as="image" />
+  <!-- Fonts: Space Grotesk (Headings) and Manrope (Body) - Self Hosted -->
+  <link rel="preload" href="/xonix_logo.webp" as="image" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            primary: '#5CFF6F', // Electric Green
-            secondary: '#0A0A0A', // Deep Black
-            surface: '#121212', // Dark Surface
-            accent: '#00E0FF', // Neon Cyan
-          },
-          fontFamily: {
-            sans: ['Manrope', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
-          },
-          animation: {
-            'spin-slow': 'spin 20s linear infinite',
-          }
-        }
-      }
-    }
-  </script>
+
   <style>
     body {
       /* Default base styles handled by Tailwind classes in Layout now */

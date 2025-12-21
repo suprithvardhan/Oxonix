@@ -79,7 +79,7 @@ const Certifications: React.FC = () => {
                 </div>
 
                 <div className="bg-gray-50 dark:bg-white/5 rounded-xl p-6 border border-gray-200 dark:border-white/10 flex items-center gap-6">
-                  <img src="/make-in-india-new.png" alt="Make in India" className="h-16 object-contain opacity-90" />
+                  <img src="/make-in-india-new.webp" alt="Make in India" className="h-16 w-auto object-contain opacity-90" width="840" height="859" />
                   <p className="text-sm text-gray-500 dark:text-gray-400 italic border-l border-gray-300 dark:border-white/10 pl-6 leading-relaxed">
                     "Proudly manufacturing in India, for India. Supporting the vision of a self-reliant nation."
                   </p>
@@ -90,9 +90,11 @@ const Certifications: React.FC = () => {
               <div className="relative">
                 <div className="bg-white p-2 rounded-xl shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500 border border-gray-100 dark:border-transparent">
                   <img
-                    src="/certificate.png"
+                    src="/certificate.webp"
                     alt="DPIIT Certificate"
                     className="w-full rounded-lg border border-gray-200"
+                    width="1024"
+                    height="725"
                   />
                 </div>
               </div>
@@ -116,26 +118,26 @@ const Certifications: React.FC = () => {
             {[
               {
                 name: "Ministry of Corporate Affairs",
-                logo: "/minisrtry-of-corporaate-affairs.png",
+                logo: "/minisrtry-of-corporaate-affairs.webp",
                 desc: "Registered Entity",
                 bg: "bg-white"
               },
               {
                 name: "Startup India",
-                logo: "/startup-india-logo.png",
+                logo: "/startup-india-logo.webp",
                 desc: "DPIIT Recognized",
                 bg: "bg-white"
               },
               {
                 name: "Make in India",
-                logo: "/make-in-india-new.png",
+                logo: "/make-in-india-new.webp",
                 desc: "Indigenous Manufacturing",
                 bg: "bg-white"
               },
               {
                 name: "ISO 9001:2015",
-                logo: "/upcoming_certifications/Iso900.jpg",
-                secondaryLogo: "/IQMCB.png",
+                logo: "/upcoming_certifications/Iso900.webp",
+                secondaryLogo: "/IQMCB.webp",
                 desc: "Quality Management System",
                 bg: "bg-white"
               }
@@ -187,7 +189,7 @@ const Certifications: React.FC = () => {
                 APPLIED
               </div>
               <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
-                <img src="/upcoming_certifications/BIs.jpg" alt="BIS" className="w-full h-full object-contain rounded-full" />
+                <img src="/upcoming_certifications/BIs.webp" alt="BIS" className="w-full h-full object-contain rounded-full" width="500" height="500" />
               </div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">BIS Certification</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">Under IS 16046</p>
@@ -204,7 +206,7 @@ const Certifications: React.FC = () => {
                 PENDING
               </div>
               <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
-                <img src="/upcoming_certifications/Arai.jpg" alt="ARAI" className="w-full h-full object-contain rounded-full" />
+                <img src="/upcoming_certifications/Arai.webp" alt="ARAI" className="w-full h-full object-contain rounded-full" width="500" height="500" />
               </div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ARAI Approval</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">Automotive Research</p>
@@ -219,7 +221,7 @@ const Certifications: React.FC = () => {
                 PENDING
               </div>
               <div className="w-28 h-28 mb-6 rounded-full bg-white flex items-center justify-center p-2 shadow-inner border border-gray-100">
-                <img src="/upcoming_certifications/Icat.jpg" alt="ICAT" className="w-full h-full object-contain rounded-full" />
+                <img src="/upcoming_certifications/Icat.webp" alt="ICAT" className="w-full h-full object-contain rounded-full" width="500" height="280" />
               </div>
               <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-2">ICAT Approval</h3>
               <p className="text-sm text-gray-500 dark:text-gray-400">Intl. Centre for Auto Tech</p>

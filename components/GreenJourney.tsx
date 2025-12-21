@@ -129,7 +129,7 @@ const GreenJourney: React.FC = () => {
                         {/* 1. Base Layer: Petrol Bike (Always visible underneath) */}
                         <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
                             <motion.img
-                                src="/shine_bike_petrol.png"
+                                src="/shine_bike_petrol.webp"
                                 alt="Petrol Scooter"
                                 className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal"
                                 animate={stage === 'petrol' ? {
@@ -162,7 +162,7 @@ const GreenJourney: React.FC = () => {
                             {/* EV Image Container */}
                             <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8 bg-gradient-to-r from-emerald-100/50 to-transparent dark:from-emerald-900/20">
                                 <motion.img
-                                    src="/shine_bike_ev.png"
+                                    src="/shine_bike_ev.webp"
                                     alt="Electric Scooter"
                                     className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(74,222,128,0.3)] mix-blend-multiply dark:mix-blend-normal"
                                     animate={{

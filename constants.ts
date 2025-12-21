@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: '/products/oxonix_ev_scooty.png',
+    image: '/products/oxonix_ev_scooty.webp',
     gallery: [],
     priceEstimate: 'Contact for Price'
   },
@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: '/products/ev_retrofit_kit.png',
+    image: '/products/ev_retrofit_kit.webp',
     gallery: [],
     priceEstimate: '75% cheaper than new EVs'
   },
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: '/products/hybrid_motorcycle_kit.png',
+    image: '/products/hybrid_motorcycle_kit.webp',
     gallery: [],
     priceEstimate: 'Contact for Price'
   },
@@ -82,7 +82,7 @@ export const PRODUCTS: Product[] = [
       batteryCapacity: 'Unknown', // Not provided
       warranty: 'Unknown' // Not provided
     },
-    image: '/products/full_electric_motorcycle_kit.png',
+    image: '/products/full_electric_motorcycle_kit.webp',
     gallery: [],
     priceEstimate: 'Contact for Price'
   }

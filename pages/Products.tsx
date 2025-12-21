@@ -370,7 +370,7 @@ const Products: React.FC = () => {
                             className="order-1 md:order-2 relative"
                         >
                             <div className="absolute inset-0 bg-blue-500/10 blur-[60px] rounded-full pointer-events-none"></div>
-                            <img src="/products/oxonix_scooty.png" alt="Scooty" className="relative z-10 w-full max-w-[480px] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" />
+                            <img src="/products/oxonix_scooty.webp" alt="Scooty" className="relative z-10 w-full max-w-[480px] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" width="287" height="322" />
                         </motion.div>
                     </div>
                 </div>
@@ -387,7 +387,7 @@ const Products: React.FC = () => {
                             className="relative"
                         >
                             <div className="absolute inset-0 bg-red-500/10 blur-[60px] rounded-full pointer-events-none"></div>
-                            <img src="/products/oxonix_motorbike.png" alt="Motorbike" className="relative z-10 w-full max-w-[550px] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" />
+                            <img src="/products/oxonix_motorbike.webp" alt="Motorbike" className="relative z-10 w-full max-w-[550px] mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" width="434" height="322" />
                         </motion.div>
 
                         <motion.div
@@ -482,13 +482,13 @@ const Products: React.FC = () => {
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 relative z-10 px-2 md:px-4 max-w-7xl mx-auto">
                     {[
-                        { brand: "/Brands_supported/tvs_logo.png", model: "Jupiter", image: "/Brands_supported/jupiter_scooty.png", type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
-                        { brand: "/Brands_supported/hero_logo.png", model: "Splendor+", image: "/Brands_supported/splendor_bike.png", type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
-                        { brand: "/Brands_supported/hero_logo.png", model: "Passion Pro", image: "/Brands_supported/passion_pro_bike.png", type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
-                        { brand: "/Brands_supported/tvs_logo.png", model: "XL 100", image: "/Brands_supported/xl100_bike.png", type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
-                        { brand: "/Brands_supported/honda_logo.png", model: "Activa", image: "/Brands_supported/activa_scooty.png", type: "Scooter", color: "from-yellow-500/20 to-orange-500/20" },
-                        { brand: "/Brands_supported/honda_logo.png", model: "Shine", image: "/Brands_supported/shine_bike.png", type: "Motorcycle", color: "from-red-500/20 to-red-800/20" },
-                        { brand: "/Brands_supported/hero_logo.png", model: "HF Deluxe", image: "/Brands_supported/Hf_deluxe_bike.png", type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
+                        { brand: "/Brands_supported/tvs_logo.webp", brandW: 400, brandH: 400, model: "Jupiter", image: "/Brands_supported/jupiter_scooty.webp", imgW: 614, imgH: 406, type: "Scooter", color: "from-blue-500/20 to-purple-500/20" },
+                        { brand: "/Brands_supported/hero_logo.webp", brandW: 3000, brandH: 2000, model: "Splendor+", image: "/Brands_supported/splendor_bike.webp", imgW: 494, imgH: 505, type: "Motorcycle", color: "from-red-500/20 to-orange-500/20" },
+                        { brand: "/Brands_supported/hero_logo.webp", brandW: 3000, brandH: 2000, model: "Passion Pro", image: "/Brands_supported/passion_pro_bike.webp", imgW: 534, imgH: 467, type: "Motorcycle", color: "from-red-500/20 to-pink-500/20" },
+                        { brand: "/Brands_supported/tvs_logo.webp", brandW: 400, brandH: 400, model: "XL 100", image: "/Brands_supported/xl100_bike.webp", imgW: 624, imgH: 400, type: "Moped", color: "from-blue-500/20 to-cyan-500/20" },
+                        { brand: "/Brands_supported/honda_logo.webp", brandW: 500, brandH: 500, model: "Activa", image: "/Brands_supported/activa_scooty.webp", imgW: 601, imgH: 415, type: "Scooter", color: "from-yellow-500/20 to-orange-500/20" },
+                        { brand: "/Brands_supported/honda_logo.webp", brandW: 500, brandH: 500, model: "Shine", image: "/Brands_supported/shine_bike.webp", imgW: 500, imgH: 500, type: "Motorcycle", color: "from-red-500/20 to-red-800/20" },
+                        { brand: "/Brands_supported/hero_logo.webp", brandW: 3000, brandH: 2000, model: "HF Deluxe", image: "/Brands_supported/Hf_deluxe_bike.webp", imgW: 266, imgH: 232, type: "Motorcycle", color: "from-gray-500/20 to-gray-700/20" },
                     ].map((bike, idx) => (
                         <motion.div
                             key={idx}
@@ -504,7 +504,7 @@ const Products: React.FC = () => {
                             <div className="bg-white/50 dark:bg-[#111]/90 border border-gray-200 dark:border-white/10 rounded-[2rem] p-4 md:p-6 h-full backdrop-blur-md hover:border-primary/50 dark:hover:border-white/20 transition-all duration-300 overflow-hidden flex flex-col group-hover:-translate-y-2">
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="h-8 bg-gray-100 dark:bg-white/5 rounded-lg px-2 py-1 flex items-center justify-center">
-                                        <img src={bike.brand} alt="Brand" className="h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+                                        <img src={bike.brand} alt={bike.model} className="h-full w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity" width={bike.brandW} height={bike.brandH} />
                                     </div>
                                     <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-white/40 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-full group-hover:text-gray-900 dark:group-hover:text-white group-hover:border-gray-400 dark:group-hover:border-white/30 transition-all">
                                         {bike.type}
