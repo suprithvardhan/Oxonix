@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import { ThemeProvider } from './components/ThemeContext';
 import ScrollToTop from './components/ScrollToTop';
 import { HelmetProvider } from 'react-helmet-async';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -27,6 +28,7 @@ function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
+        <SpeedInsights />
         <Router>
           <ScrollToTop />
           <Layout>
