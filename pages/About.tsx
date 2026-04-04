@@ -88,26 +88,7 @@ const About: React.FC = () => {
         "Expertise in composites, automation, and embedded systems."
       ]
     },
-    {
-      name: "Mudavath Anil Kumar",
-      role: "Full-stack & Embedded Systems Engineer",
-      img: "/Team_Members_images/Anil_Kumar.webp",
-      bio: [
-        "Skilled full-stack and embedded systems engineer at Oxonix.",
-        "With strong expertise in VLSI and embedded hardware, he contributes directly to Oxonix’s EV retrofitting, battery systems, and controller development.",
-        "His problem-solving and debugging skills ensure that Oxonix delivers reliable, efficient, and user-focused technology solutions."
-      ]
-    },
-    {
-      name: "Eslavath Ramdas",
-      role: "Simulation & Software Engineer",
-      img: "/Team_Members_images/Ramdas.webp",
-      bio: [
-        "Skilled in Unity, C#, and real-time system modeling.",
-        "He develops EV simulation tools, virtual training modules, and supports software automation.",
-        "With experience in AI-driven simulations and full-stack web technologies, he helps enhance Oxonix’s R&D, testing workflow, and digital platforms."
-      ]
-    }
+    
   ];
 
   return (
